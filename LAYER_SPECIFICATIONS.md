@@ -3,223 +3,210 @@ Global Climate Condition Index (GCCI)
 
 Criador: **Wagner Cócia de Oliveira**  
 Local de criação: Campinas — São Paulo — Brasil  
-Data: 16 de novembro de 2025
+Data: 16 de novembro de 2025  
+Atualizado: 17 de novembro de 2025 (Expansão para 20 camadas)
 
 ---
 
 # 1. Introdução
+Esta é a versão **oficial e definitiva** das camadas (“Layers”) que compõem o GCCI.  
+O índice agora possui **20 camadas**, representando a análise ambiental, climática, econômica e tecnológica mais completa já concebida.
 
-Este documento descreve a estrutura oficial das **12 camadas do GCCI**, suas funções, objetivos, indicadores-base e fontes primárias — sem revelar fórmulas internas, pesos ou integrações proprietárias.
+Este documento:
 
-Cada camada é independente, modular e construída com dados públicos globais de alta confiabilidade.
-
----
-
-# 2. Princípios das Camadas
-
-Todas as 12 camadas seguem:
-
-- rigor metodológico internacional;
-- independência analítica;
-- observabilidade global;
-- manutenção contínua;
-- solidez científica;
-- neutralidade política e econômica.
-
-As camadas, juntas, compõem o **núcleo de medição do GCCI** (GCCI-M).
+✔ lista todas as camadas  
+✔ descreve funções, objetivos e fontes  
+✘ **não revela** fórmulas, pesos, algoritmos ou integrações proprietárias
 
 ---
 
-# 3. As 12 Camadas Oficiais do GCCI
+# 2. Princípios Técnicos da Arquitetura
+Todas as 20 camadas:
+
+- são independentes e modulares  
+- usam somente dados públicos e oficiais  
+- seguem metodologias científicas  
+- permitem auditoria externa das fontes  
+- integram-se via lógica interna proprietária (não divulgada)
+
+---
+
+# 3. As 20 Camadas Oficiais do GCCI
 
 ---
 
 ## 🌡️ 1. Climate Change Layer  
-**Objetivo:** medir a tendência do aquecimento global e sua aceleração.  
-**Indicadores-base:**
-
-- temperatura média global anual;  
-- anomalias de superfície;  
-- concentração de CO₂, CH₄ e N₂O;  
-- taxa de derretimento de gelo continental.
-
-**Fontes:** IPCC, NASA GISS, NOAA, WMO.
+Tendência de aquecimento global, gases estufa e anomalias térmicas.  
+Fontes: IPCC, NASA GISS, NOAA, WMO.
 
 ---
 
 ## 🌪️ 2. Extreme Events Layer  
-**Objetivo:** quantificar a frequência, intensidade e severidade dos eventos climáticos extremos.  
-**Indicadores-base:**
-
-- secas, enchentes, ondas de calor;  
-- tempestades severas;  
-- perdas econômicas por desastres;  
-- impactos sociais.
-
-**Fontes:** EM-DAT, NOAA Storm Events, CEMS, WWA.
+Frequência e severidade de desastres climáticos.  
+Fontes: EM-DAT, NOAA Storm Events, CEMS, WWA.
 
 ---
 
 ## 🌊 3. Oceans & Sea Level Layer  
-**Objetivo:** acompanhar o estado geral dos oceanos.  
-**Indicadores-base:**
-
-- temperatura da superfície do mar (SST);  
-- nível global dos oceanos;  
-- acidificação;  
-- correntes oceânicas.
-
-**Fontes:** NOAA OISST, CMEMS, NASA ECCO.
+Temperatura, nível do mar, acidificação e correntes oceânicas.  
+Fontes: NOAA OISST, CMEMS, NASA ECCO.
 
 ---
 
 ## 🌱 4. Soil Condition Layer  
-**Objetivo:** medir a saúde do solo global.  
-**Indicadores-base:**
-
-- desertificação;  
-- erosão severa;  
-- umidade do solo;  
-- perda de nutrientes.
-
-**Fontes:** FAO, UNCCD, ESDAC, NASA SMAP.
+Erosão, desertificação e umidade do solo.  
+Fontes: FAO, UNCCD, NASA SMAP.
 
 ---
 
 ## 🌿 5. Biodiversity Layer  
-**Objetivo:** acompanhar o estado da vida no planeta.  
-**Indicadores-base:**
-
-- espécies ameaçadas;  
-- taxas de extinção;  
-- áreas de preservação;  
-- perda de habitat.
-
-**Fontes:** IUCN, IPBES, GBIF.
+Extinções, perda de habitat e pressão ecológica.  
+Fontes: IUCN, IPBES, GBIF.
 
 ---
 
 ## 💧 6. Water Availability Layer  
-**Objetivo:** medir a segurança hídrica global.  
-**Indicadores-base:**
-
-- água renovável per capita;  
-- escassez hídrica;  
-- risco hídrico geográfico.
-
-**Fontes:** UN Water, FAO AQUASTAT, WRI AQUEDUCT.
+Escassez hídrica, reservas, risco e oferta por região.  
+Fontes: UN Water, FAO AQUASTAT, WRI Aqueduct.
 
 ---
 
 ## 🥗 7. Food Security Layer  
-**Objetivo:** monitorar a estabilidade alimentar do planeta.  
-**Indicadores-base:**
-
-- produtividade agrícola;  
-- áreas de cultivo;  
-- reservas alimentares;  
-- insegurança alimentar.
-
-**Fontes:** FAO, WFP, GEOGLAM.
+Estabilidade agrícola e projeções alimentares.  
+Fontes: FAO, WFP, GEOGLAM.
 
 ---
 
 ## ⚙️ 8. AI & Data Centers Impact Layer  
-**Objetivo:** medir o impacto da tecnologia no planeta.  
-**Indicadores-base:**
-
-- uso global de energia por data centers;  
-- expansão da IA;  
-- demanda hídrica para resfriamento;  
-- emissões digitais.
-
-**Fontes:** IEA, Uptime Institute, LBNL.
+Energia digital, emissões e uso de água para resfriamento.  
+Fontes: IEA, Uptime Institute, LBNL.
 
 ---
 
 ## ⚒️ 9. Mineral Resources Layer  
-**Objetivo:** acompanhar a pressão sobre recursos minerais essenciais.  
-**Indicadores-base:**
-
-- extração anual de minerais críticos;  
-- consumo de terras raras;  
-- exaustão de reservas;  
-- dependência por setor industrial.
-
-**Fontes:** USGS, IEA, British Geological Survey.
+Pressão global sobre minerais críticos e terras raras.  
+Fontes: USGS, IEA, BGS.
 
 ---
 
 ## 🔋 10. Energy Matrix Layer  
-**Objetivo:** medir a transição energética global.  
-**Indicadores-base:**
-
-- uso de fósseis vs. renováveis;  
-- emissões por setor energético;  
-- capacidade instalada limpa;  
-- dependência petrolífera.
-
-**Fontes:** IEA, IRENA, EMER.
+Transição energética global (renováveis x fósseis).  
+Fontes: IEA, IRENA, Ember.
 
 ---
 
 ## 🚰 11. Clean Water & Sanitation Layer  
-**Objetivo:** avaliar avanços no acesso universal à água potável.  
-**Indicadores-base:**
-
-- acesso a água tratada;  
-- saneamento básico;  
-- infraestrutura urbana;  
-- risco de colapso hídrico.
-
-**Fontes:** WHO/UNICEF JMP, UN Habitat, OECD.
+Acesso a água tratada e saneamento básico.  
+Fontes: WHO/UNICEF JMP, UN Habitat, OECD.
 
 ---
 
 ## 🌍 12. Global Risk Map Layer  
-**Objetivo:** identificar onde o risco ambiental e climático é maior.  
-**Indicadores-base:**
-
-- vulnerabilidade climática;  
-- preparação governamental;  
-- densidade populacional;  
-- risco de colapso socioeconômico.
-
-**Fontes:** UNDRR, WRI Risk Index, GHS, ND-GAIN.
+Riscos climáticos, populacionais e de infraestrutura.  
+Fontes: UNDRR, ND-GAIN, GHS.
 
 ---
 
-# 4. Independência e Modularidade  
-Cada camada funciona de forma independente.  
-O GCCI apenas integra os resultados (integração proprietária).
-
-Isso garante:
-
-- flexibilidade futura;  
-- substituição por fontes mais novas;  
-- escalabilidade global;  
-- auditabilidade dos dados.
+## 🏥 13. Public Health & Climate Layer  
+Impactos diretos do clima na saúde global.  
+Indicadores:  
+- doenças vetoriais  
+- mortes por calor  
+- surtos agravados por clima  
+Fontes: WHO, Lancet Countdown, CDC Climate Health.
 
 ---
 
-# 5. O que permanece em sigilo  
-Este arquivo **NÃO** inclui:
-
-- fórmulas internas;  
-- pesos matemáticos;  
-- sistemas de normalização;  
-- critérios combinatórios;  
-- lógica dos módulos GCCI-M, GCCI-P e GCCI-X.
-
-Todo esse conteúdo é de **propriedade intelectual exclusiva** de Wagner Cócia de Oliveira.
+## 🏭 14. Industrial Emissions Layer  
+Emissões setoriais por indústria.  
+Indicadores: aço, cimento, transportes, química, energia.  
+Fontes: IEA, UNFCCC, EDGAR.
 
 ---
 
-# 6. Declaração de Autoria  
-As 12 camadas e todo o conceito técnico foram criados por:
+## 💵 15. Climate Finance & Sustainability Investments Layer  
+Fluxo global de capital para iniciativas sustentáveis.  
+Indicadores:  
+- green bonds  
+- fundos ESG  
+- investimentos públicos em clima  
+Fontes: IMF, World Bank, OECD Climate Finance.
+
+---
+
+## ⛽ 16. Fossil Fuels vs Clean Fuels Layer  
+Consumo, dependência e transição setorial.  
+Fontes: IEA, BP Energy Review, OPEC.
+
+---
+
+## ⚡ 17. Renewable Incentives & Clean Policy Layer  
+Índice global de políticas pró-energia renovável.  
+Indicadores:  
+- subsídios  
+- marcos regulatórios  
+- metas net-zero  
+Fontes: IRENA, REN21, UNFCCC.
+
+---
+
+## 🧭 18. Climate Adaptation & Resilience Layer  
+Capacidade de adaptação de países ao clima extremo.  
+Fontes: ND-GAIN, UNDRR, World Bank Climate Resilience.
+
+---
+
+## 📈 19. Socioeconomic Vulnerability Layer  
+Capacidade econômica e social de enfrentar riscos climáticos.  
+Indicadores:  
+- pobreza  
+- densidade populacional  
+- infraestrutura crítica  
+Fontes: UNDP, World Bank, OECD.
+
+---
+
+## 🧪 20. GCCI Industrial Impact Ranking  
+Classificação dos setores que mais degradam ou preservam o planeta.  
+Indicadores:  
+- emissões setoriais  
+- consumo hídrico  
+- pressão mineral  
+- risco de colapso ambiental  
+Fontes: IEA, FAO, USGS, UNFCCC, OECD.
+
+---
+
+# 4. Integridade e Independência das Camadas
+Todas as camadas:
+
+✔ podem evoluir no futuro  
+✔ podem ser atualizadas sem alterar o GCCI  
+✔ são projetadas para expansão ilimitada  
+✔ fornecem rastreabilidade científica sólida
+
+---
+
+# 5. Conteúdo Proprietário (Não Público)
+As seguintes partes **não** são reveladas:
+
+❌ Fórmulas internas  
+❌ Pesos entre camadas  
+❌ Conexões matemáticas  
+❌ Critérios de normalização  
+❌ Algoritmos GCCI-M/P/X  
+❌ Estruturas de combinação  
+❌ Parâmetros finais  
+
+Tudo isso é protegido como propriedade intelectual.
+
+---
+
+# 6. Declaração de Autoria
+As 20 camadas foram criadas e documentadas por:
 
 **Wagner Cócia de Oliveira**  
 Campinas — São Paulo — Brasil  
-16 de novembro de 2025  
+16–17 de novembro de 2025  
 
 © 2025 — Global Climate Condition Index (GCCI)

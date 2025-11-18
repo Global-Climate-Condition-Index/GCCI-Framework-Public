@@ -102,5 +102,6 @@ O GCCI se posiciona como um dos primeiros pilares de um **mercado financeiro eco
 ## 📬 Contato institucional
 
 Fundador: **Wagner Cócia de Oliveira**   
-Local de criação: Campinas — São Paulo — Brasil  
+Local de criação: Campinas — São Paulo — Brasil
+https://www.linkedin.com/in/wagner-c%C3%B3cia-de-oliveira-32660a2a3/
 Data: 16 de novembro de 2025

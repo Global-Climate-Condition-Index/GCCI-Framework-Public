@@ -1,5 +1,4 @@
-# GCCI — Fontes Oficiais de Dados  
-### DATA_SOURCES.md  
+# GCCI — Fontes Oficiais de Dados
 ### Versão Pública Institucional
 
 O GCCI — Global Climate Condition Index utiliza exclusivamente **dados públicos, científicos, auditáveis e internacionalmente reconhecidos**.  

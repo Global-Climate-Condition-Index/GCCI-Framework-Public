@@ -100,3 +100,43 @@ Criar o primeiro padrão de intercâmbio **ecológico-científico**, alinhando e
 
 # 🌐 Relação entre os três tokens
 
+📏 **GCCI-M** → Medição  
+🛡️ **GCCI-P** → Proteção  
+🔁 **GCCI-X** → Intercâmbio  
+
+
+Os três formam o tripé:
+
+**Medição científica → Proteção econômica → Interoperabilidade global**
+
+Nenhum deles substitui o GCCI e nenhum contém as fórmulas internas, protegendo integralmente:
+
+✔ propriedade intelectual  
+✔ lógica do índice  
+✔ mecanismo de cálculo  
+✔ arquitetura confidencial  
+
+---
+
+# 🔒 Segurança e Proteção Intelectual
+
+O sistema de tokens foi projetado para:
+
+- blindar o núcleo do GCCI,  
+- impedir engenharia reversa,  
+- garantir que as fórmulas internas permaneçam privadas,  
+- permitir uso global sem exposição dos mecanismos proprietários.
+
+Toda emissão, validação e governança é definida pelo **Instituto Oficial do GCCI**, a ser constituído.
+
+---
+
+# 📬 Contato Institucional
+
+Fundador: **Wagner Cócia de Oliveira**  
+Local: **Campinas — São Paulo — Brasil**  
+Data: **16 de novembro de 2025**  
+LinkedIn: https://www.linkedin.com/in/wagner-c%C3%B3cia-de-oliveira-32660a2a3/
+
+---
+

@@ -1,5 +1,4 @@
-# MODULES_OVERVIEW.md  
-## GCCI — Estrutura Oficial dos 20 Módulos Integrados
+# GCCI — Estrutura Oficial dos 20 Módulos Integrados
 
 O GCCI (Global Climate Condition Index) é composto por um ecossistema de **20 módulos científicos interconectados**, cobrindo todas as dimensões críticas da condição climática global.
 

@@ -1,0 +1,102 @@
+# GCCI — Sistema Oficial de Tokens
+
+O ecossistema do GCCI é composto por **três tokens institucionais**, cada um com uma função distinta dentro da arquitetura global.  
+Nenhum destes tokens, isoladamente, representa o Índice GCCI em si — eles são **ferramentas operacionais** conectadas ao sistema, não ao seu núcleo lógico.
+
+Os tokens foram projetados para formar a primeira base de um **mercado financeiro ecológico-científico**, alinhado a auditoria, transparência, responsabilidade global e governança.
+
+---
+
+# 🪙 1. GCCI-M  
+### *Measurement Token*  
+### (Token de Medição — Uso Não Comercial)
+
+O GCCI-M é o token que registra:
+
+- leituras,
+- sincronizações,
+- ciclos de atualização,
+- checkpoints internos.
+
+📌 **Função**  
+Representa a camada de *mensuração* dos dados dentro do ecossistema, sincronizando os módulos do GCCI.
+
+📌 **Quem usa?**  
+Instituições autorizadas, validadores científicos, órgãos de auditoria, universidades e centros de pesquisa.
+
+📌 **Características**
+- Não possui valor de mercado.  
+- Não é negociável.  
+- Não representa crédito, moeda ou ativo financeiro.  
+- Serve unicamente para registrar operações técnicas internas.
+
+📌 **Por que existe?**  
+Para assegurar que o GCCI seja **auditável**, **replicável** e **verificável**, sem exposição da lógica interna.
+
+---
+
+# 🛡️ 2. GCCI-P  
+### *Protection Token*  
+### (Token de Proteção — Hedge Climático)
+
+O GCCI-P é o componente que permite que governos, empresas e instituições financeiras criem:
+
+- instrumentos de proteção climática,
+- contratos de risco,
+- lastros para mitigação,
+- produtos financeiros regulados.
+
+📌 **Função**  
+Serve como base para **proteção contra degradação ambiental**, oferecendo um mecanismo global de hedge climático.
+
+📌 **Quem usa?**
+- Governos  
+- Bancos centrais  
+- Seguradoras  
+- Instituições financeiras  
+- Organizações internacionais  
+
+📌 **Características**
+- Emissão controlada  
+- Regulamentado  
+- Não acessível ao público geral  
+- Vinculado a dados agregados do GCCI (não a fórmulas internas)
+
+📌 **Objetivo**  
+Criar o primeiro mecanismo global padronizado de **protetividade ambiental sistêmica**, dentro de parâmetros seguros e verificáveis.
+
+---
+
+# 💱 3. GCCI-X  
+### *Exchange Token*  
+### (Token de Interoperabilidade Regulada)
+
+O GCCI-X é o token destinado à circulação sob regras formais, podendo ser:
+
+- moeda utilitária,  
+- meio de liquidação,  
+- mecanismo de integração entre plataformas,  
+- token operacional de transação entre entidades autorizadas.
+
+📌 **Função**  
+Permite a comunicação econômica entre sistemas que utilizam o GCCI como referência.
+
+📌 **Quem usa?**
+- Plataformas autorizadas  
+- Exchanges reguladas  
+- Instituições participantes  
+- Operadores institucionais  
+
+📌 **Características**
+- Regulamentado  
+- Compliant (KYC/AML)  
+- Usado somente em ambientes oficiais  
+- Nunca expõe a lógica do GCCI
+
+📌 **Objetivo**  
+Criar o primeiro padrão de intercâmbio **ecológico-científico**, alinhando economia, clima e transparência.
+
+---
+
+# 🌐 Relação entre os três tokens
+

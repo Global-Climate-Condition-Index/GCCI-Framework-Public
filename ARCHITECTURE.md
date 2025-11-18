@@ -1,5 +1,4 @@
-# ARCHITECTURE.md  
-## GCCI — Arquitetura Institucional do Sistema Global
+# GCCI — Arquitetura Institucional do Sistema Global
 
 O GCCI (Global Climate Condition Index) é composto por uma arquitetura modular, escalável e auditável, organizada em camadas conceituais.  
 Esta versão apresenta **apenas a estrutura pública**, sem fórmulas, pesos, algoritmos ou lógica operacional interna.

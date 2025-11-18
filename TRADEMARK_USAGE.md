@@ -1,4 +1,4 @@
-TRADEMARK & BRAND USAGE POLICY 
+# TRADEMARK & BRAND USAGE POLICY  
 Global Climate Condition Index (GCCI)
 
 **Marca registrada de fato (common-law trademark)**  

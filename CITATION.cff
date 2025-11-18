@@ -1,9 +1,0 @@
-cff-version: 1.2.0
-title: "GCCI – Global Climate Condition Index (Public Framework)"
-message: "Se utilizar este trabalho em publicações, cite adequadamente."
-authors:
-  - family-names: "Oliveira"
-    given-names: "Wagner Cócia de"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-date-released: "2025-11-16"
-url: "https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public"

@@ -2,7 +2,7 @@
 ### Sistema Global de Avaliação da Condição Climática  
 Criado por **Wagner Cócia de Oliveira**  
 Campinas — São Paulo — Brasil  
-Data de criação: **16 de novembro de 2025**
+Data de criação: **17 de novembro de 2025**
 
 ---
 

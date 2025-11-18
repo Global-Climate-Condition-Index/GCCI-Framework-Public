@@ -99,10 +99,9 @@ O objetivo é que o GCCI evolua para:
 
 ---
 
-## 📬 Contato Institucional
+## 📬 Contato Institucional  
 
-Fundador: Wagner Cócia de Oliveira
-Local de criação: Campinas — São Paulo — Brasil
-Data: 16 de novembro de 2025
-LinkedIn: https://www.linkedin.com/in/wagner-c%C3%B3cia-de-oliveira-32660a2a3/
-
+**Fundador:** Wagner Cócia de Oliveira  
+**Local de criação:** Campinas — São Paulo — Brasil  
+**Data:** 16 de novembro de 2025  
+**LinkedIn:** https://www.linkedin.com/in/wagner-c%C3%B3cia-de-oliveira-32660a2a3/

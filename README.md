@@ -1,92 +1,59 @@
-# GCCI — Global Climate Condition Index  
-### Sistema Global de Avaliação da Condição Climática  
+# 📘 GCCI — Global Climate Condition Index  
+Sistema Global de Avaliação da Condição Climática  
 Criado por **Wagner Cócia de Oliveira**  
 Campinas — São Paulo — Brasil  
-Data de criação: **17 de novembro de 2025**
+Data de criação: **16/11/2025**
 
 ---
 
-## 📘 O que é o GCCI?
+## 🌍 O que é o GCCI?
+O **GCCI** é um sistema científico global criado para medir a condição real do planeta de forma integrada, usando exclusivamente dados públicos de instituições internacionais como **ONU, IPCC, NASA, NOAA, FAO, ESA, IEA**, entre outras.
 
-O **GCCI (Global Climate Condition Index)** é o primeiro índice global integrado capaz de medir a *condição climática real* do planeta combinando:
-
-- dados científicos oficiais,  
-- métricas ambientais globais,  
-- indicadores sociais e tecnológicos,  
-- e um sistema de tokens para uso econômico regulado.
-
-O GCCI integra, de forma transparente e replicável, **20 módulos temáticos**, todos alimentados exclusivamente por fontes públicas e reconhecidas mundialmente, como:
-
-- ONU  
-- IPCC  
-- NASA  
-- NOAA  
-- FAO  
-- WHO  
-- IEA  
-- World Bank  
-- ECMWF  
-
-Nenhuma fórmula interna, ponderação ou estrutura algorítmica é divulgada publicamente.  
-O motor interno permanece **propriedade intelectual reservada ao fundador**.
+O índice consolida informações em **6 macrodimensões** e **25 camadas analíticas**, permitindo avaliar tendências ambientais, riscos climáticos e impactos estruturais.
 
 ---
 
-## 🌍 Objetivo do GCCI
-
-Oferecer ao mundo um **termômetro científico global**, confiável, permanente e evolutivo, que permita:
-
-- medir riscos e condições ambientais,  
-- observar tendências planetárias em tempo real,  
-- auxiliar governos, empresas e instituições,  
-- e apoiar mecanismos financeiros sustentáveis.
-
----
-
-## 🧩 Estrutura do GCCI
-
-O GCCI é composto por:
-
-- **20 módulos técnicos** de avaliação (clima, água, biodiversidade, alimentos, energia, inteligência artificial, etc.)
-- **1 índice unificado** (GCCI Score)
-- **3 tokens oficiais**  
-  - GCCI-M — Measurement Token  
-  - GCCI-P — Protection Token  
-  - GCCI-X — Exchange Token  
+## 🧩 Estrutura Oficial
+- **6 macrodimensões globais**
+- **25 camadas de medição**
+- **3 tokens institucionais**
+  - **GCCI-M** — Measurement Token  
+  - **GCCI-P** — Protection Token  
+  - **GCCI-X** — Exchange Token (uso institucional regulado)
 
 ---
 
 ## 🏛 Governança
-
-O GCCI segue princípios internacionais de:
-
-- transparência,  
-- independência,  
-- responsabilidade ambiental,  
-- neutralidade política e econômica.  
+O **GCCI Institute** é uma entidade planejada para o futuro.  
+Ainda **não existe** e será constituído conforme a evolução e adoção internacional do GCCI.
 
 ---
 
 ## 🔒 Propriedade Intelectual
-
 O GCCI é criação original de **Wagner Cócia de Oliveira**.  
-Toda a arquitetura, metodologia, algoritmos e fórmulas internas são **confidenciais e protegidas**.
+Toda a metodologia interna é **confidencial e proprietária**.
 
-Somente esta documentação pública é liberada.
+Este repositório contém apenas a documentação pública.
+
+---
+
+## 📄 Documentos Oficiais
+Localizados na pasta **/docs**:
+
+- **GCCI_Official_Document_v1_4.pdf**  
+- **GCCI_Protecao_Institucional_v1_3_FULL.pdf**
 
 ---
 
 ## 📬 Contato
-
-Desenvolvido pelo fundador:  
-**Wagner Cócia de Oliveira**  
-Campinas/São Paulo-Brasil 
+Autor: Wagner Cócia de Oliveira  
+LinkedIn: www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
 
 ---
 
-## 📄 Licença
+## 📘 Licença
+Este repositório é protegido pela **GCCI Public Disclosure License — v1**.  
+Permite leitura e citação.  
+Proíbe cópia, replicação, comercialização ou engenharia reversa.
 
-Todo o conteúdo disponível neste repositório está protegido pela  
-**GCCI Public Disclosure License — v1**,  
-que permite leitura e citação, porém **proíbe cópia, replicação, comercialização, engenharia reversa ou derivativos**.
-
+Copyright © 2025 — Wagner Cócia de Oliveira

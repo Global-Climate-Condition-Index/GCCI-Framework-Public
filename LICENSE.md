@@ -1,4 +1,4 @@
-GCCI Public Disclosure License — v1
+#GCCI Public Disclosure License — v1
 Data: 20/11/2025
 Autor: Wagner Cócia de Oliveira
 Obra: Global Climate Condition Index (GCCI)

@@ -42,10 +42,11 @@ Este repositório contém apenas a documentação pública e institucional.
 ## 📄 Documentos Oficiais  
 Localizados na pasta **/docs** deste repositório:
 
-- **[GCCI_Official_Document_v1_4.pdf](docs/GCCI_Official_Document_v1_4.pdf)**  
-- **[GCCI_Protecao_Institucional_v1_3_FULL.pdf](docs/GCCI_Protecao_Institucional_v1_3_FULL.pdf)**  
+- **[GCCI_Official_Document_Novembro_2025.pdf](docs/GCCI_Official_Document_Novembro_2025.pdf)**  
+- **[GCCI_Protecao_Institucional_Novembro_2025.pdf](docs/GCCI_Protecao_Institucional_Novembro_2025.pdf)**  
 
-A logomarca oficial também está disponível em `docs/GCCI_Logomarca.png`.
+A logomarca oficial também está disponível em:  
+- **[GCCI_Logomarca.png](docs/GCCI_Logomarca.png)**
 
 ---
 

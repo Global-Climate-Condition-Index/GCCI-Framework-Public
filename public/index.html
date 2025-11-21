@@ -22,7 +22,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     header img {
       width: 72px;
@@ -33,7 +33,7 @@
       font-size: 1.9rem;
     }
     h2 {
-      margin-top: 32px;
+      margin-top: 24px;
       font-size: 1.3rem;
     }
     p {
@@ -62,66 +62,140 @@
       font-size: 0.85rem;
       color: #6b7280;
     }
+    .lang-toggle {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: #4b5563;
+    }
+    .lang-toggle a {
+      font-weight: 600;
+    }
+    .lang-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
   </style>
 </head>
 <body>
   <div class="page">
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho comum -->
     <header>
-      <img src="docs/GCCI_Logomarca.png" alt="Logomarca GCCI">
+      <img src="../docs/GCCI_Logomarca.png" alt="Logomarca GCCI">
       <div>
         <h1>GCCI — Global Climate Condition Index</h1>
         <p>Sistema Global de Avaliação da Condição Climática</p>
       </div>
     </header>
 
-    <!-- Sobre o GCCI -->
-    <div class="card">
-      <h2>Sobre o GCCI</h2>
-      <p>
-        O GCCI (Global Climate Condition Index) é um sistema científico global criado por
-        <strong>Wagner Cócia de Oliveira</strong> para medir a condição real do planeta de forma integrada,
-        utilizando exclusivamente dados públicos de instituições internacionais reconhecidas.
-      </p>
-      <p>
-        O índice organiza informação em <strong>6 macrodimensões</strong> e <strong>25 camadas analíticas</strong>,
-        integrando clima, recursos naturais, atmosfera, energia, sociedade e futuros globais.
-      </p>
+    <!-- Alternador de idioma -->
+    <div class="lang-toggle">
+      <span>Idioma / Language:</span>
+      <a href="#pt">PT</a> | <a href="#en">EN</a>
     </div>
 
-    <!-- Documentos Oficiais -->
-    <div class="card">
-      <h2>Documentos Oficiais</h2>
-      <ul>
-        <li>
-          <a href="docs/GCCI_Official_Document_Novembro_2025.pdf" target="_blank">
-            GCCI — Documento Oficial Estrutural (PDF)
+    <!-- ===================== PT-BR ===================== -->
+    <section id="pt">
+      <div class="lang-label">Português (Brasil)</div>
+
+      <div class="card">
+        <h2>Sobre o GCCI</h2>
+        <p>
+          O GCCI (Global Climate Condition Index) é um sistema científico global criado por
+          <strong>Wagner Cócia de Oliveira</strong> para medir a condição real do planeta de forma integrada,
+          utilizando exclusivamente dados públicos de instituições internacionais reconhecidas.
+        </p>
+        <p>
+          O índice organiza informação em <strong>6 macrodimensões</strong> e <strong>25 camadas analíticas</strong>,
+          integrando clima, recursos naturais, atmosfera, energia, sociedade e futuros globais.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Documentos Oficiais</h2>
+        <ul>
+          <li>
+            <a href="../docs/GCCI_Official_Document_Novembro_2025.pdf" target="_blank">
+              GCCI — Documento Oficial Estrutural (PDF)
+            </a>
+          </li>
+          <li>
+            <a href="../docs/GCCI_Protecao_Institucional_Novembro_2025.pdf" target="_blank">
+              GCCI — Proteção Institucional Global (PDF)
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Contato Oficial</h2>
+        <p><strong>Autor:</strong> Wagner Cócia de Oliveira</p>
+        <p><strong>Local:</strong> Campinas — São Paulo — Brasil</p>
+        <p>
+          <strong>LinkedIn:</strong><br>
+          <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank">
+            www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
           </a>
-        </li>
-        <li>
-          <a href="docs/GCCI_Protecao_Institucional_Novembro_2025.pdf" target="_blank">
-            GCCI — Proteção Institucional Global (PDF)
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== EN ===================== -->
+    <section id="en">
+      <div class="lang-label" style="margin-top: 24px;">English</div>
+
+      <div class="card">
+        <h2>About GCCI</h2>
+        <p>
+          The <strong>GCCI (Global Climate Condition Index)</strong> is a global scientific system created by
+          <strong>Wagner Cócia de Oliveira</strong> to measure the real condition of the planet in an integrated way,
+          using exclusively public data from internationally recognized institutions.
+        </p>
+        <p>
+          The index organizes information into <strong>6 macro dimensions</strong> and <strong>25 analytical layers</strong>,
+          integrating climate, natural resources, atmosphere, energy, society and global futures.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Official Documents</h2>
+        <ul>
+          <li>
+            <a href="../docs/GCCI_Official_Document_Novembro_2025.pdf" target="_blank">
+              GCCI — Official Structural Document (PDF)
+            </a>
+          </li>
+          <li>
+            <a href="../docs/GCCI_Protecao_Institucional_Novembro_2025.pdf" target="_blank">
+              GCCI — Institutional Protection Document (PDF)
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Official Contact</h2>
+        <p><strong>Author:</strong> Wagner Cócia de Oliveira</p>
+        <p><strong>Location:</strong> Campinas — São Paulo — Brazil</p>
+        <p>
+          <strong>LinkedIn:</strong><br>
+          <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank">
+            www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
           </a>
-        </li>
-      </ul>
-    </div>
+        </p>
+      </div>
+    </section>
 
-    <!-- Contato -->
-    <div class="card">
-      <h2>Contato Oficial</h2>
-      <p><strong>Autor:</strong> Wagner Cócia de Oliveira</p>
-      <p><strong>Local:</strong> Campinas — São Paulo — Brasil</p>
-      <p>
-        <strong>LinkedIn:</strong><br>
-        <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank">
-        </a>
-      </p>
-    </div>
-
-    <!-- Rodapé -->
+    <!-- Rodapé comum -->
     <footer>
-      <p>© 2025 — Wagner Cócia de Oliveira. Todos os direitos reservados.</p>
+      <p>© 2025 — Wagner Cócia de Oliveira. Todos os direitos reservados / All rights reserved.</p>
     </footer>
 
   </div>

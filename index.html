@@ -8,7 +8,7 @@
     name="description"
     content="GCCI — Global Climate Condition Index. Documentação pública oficial v1.0, institucional e declaratória."
   />
-  <!-- Ajuste este caminho se o index.html NÃO estiver em /public -->
+  <!-- Se o index.html estiver em /public e a logo em /public/docs, este caminho está correto -->
   <link rel="icon" href="docs/GCCI_Logomarca.png" />
 
   <style>
@@ -51,19 +51,24 @@
     .page {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 16px 16px 40px;
     }
 
+    /* HEADER FIXO */
     header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 20px;
-      padding: 20px 20px;
-      margin-bottom: 24px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
       border-radius: 16px;
       background: var(--card);
       border: 1px solid var(--border);
+      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
     }
 
     .logo-wrap {
@@ -71,8 +76,8 @@
     }
 
     .logo-wrap img {
-      width: 120px;
-      height: 120px;
+      width: 150px;   /* logo maior */
+      height: 150px;
       object-fit: contain;
       border-radius: 12px;
       background: #f9fafb;
@@ -130,15 +135,10 @@
     }
 
     main {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 18px;
-    }
-
-    @media (max-width: 880px) {
-      main {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      margin-top: 14px;   /* espaço abaixo do header fixo */
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     section {
@@ -146,10 +146,6 @@
       border-radius: 16px;
       padding: 16px 16px 14px;
       border: 1px solid var(--border);
-    }
-
-    section + section {
-      margin-top: 12px;
     }
 
     section h2 {
@@ -286,7 +282,7 @@
     }
 
     footer {
-      margin-top: 24px;
+      margin-top: 20px;
       padding-top: 14px;
       border-top: 1px solid var(--border);
       font-size: 12.5px;
@@ -299,11 +295,11 @@
 
     @media (max-width: 640px) {
       header {
-        padding: 16px 14px;
+        padding: 14px 12px;
       }
       .logo-wrap img {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
       }
       footer {
         flex-direction: column;
@@ -314,9 +310,10 @@
 
 <body>
   <div class="page">
+    <!-- HEADER FIXO -->
     <header>
       <div class="logo-wrap">
-        <!-- Se não carregar, confira se o caminho está correto -->
+        <!-- Se a logo não aparecer, confira o caminho docs/GCCI_Logomarca.png -->
         <img src="docs/GCCI_Logomarca.png" alt="GCCI — Global Climate Condition Index logo" />
       </div>
       <div class="hero-text">
@@ -327,8 +324,9 @@
         <h1>GCCI — Global Climate Condition Index</h1>
         <p class="hero-subtitle">
           Documentação pública oficial e declaratória do GCCI, mantendo sigilo
-          completo sobre lógica interna, algoritmos, pesos e mecanismos operacionais,
-          com foco em integridade, autoria e estrutura institucional.
+          completo sobre lógica interna, algoritmos, pesos e mecanismos
+          operacionais, com foco em integridade, autoria e estrutura
+          institucional.
         </p>
         <div class="hero-meta">
           Criado por Wagner Cócia de Oliveira — Campinas, São Paulo, Brasil.  
@@ -338,243 +336,248 @@
     </header>
 
     <main>
-      <!-- Coluna esquerda: documentos essenciais + links -->
-      <div>
-        <section id="docs">
-          <span class="eyebrow">Documentação essencial pública</span>
-          <h2>Documentos principais disponíveis para leitura</h2>
-          <p>
-            Estes são os dois documentos centrais para compreensão institucional
-            do GCCI e para a comprovação formal de autoria e integridade.
-          </p>
+      <!-- 1) ENQUADRAMENTO INSTITUCIONAL -->
+      <section id="about">
+        <span class="eyebrow">Sobre o GCCI</span>
+        <h2>Enquadramento institucional</h2>
+        <p>
+          O <strong>GCCI — Global Climate Condition Index</strong> é um framework
+          internacional independente que organiza informações públicas em
+          macrodimensões e camadas analíticas, permitindo uma visão integrada,
+          clara e comparável da condição global do planeta.
+        </p>
+        <p>
+          Esta página tem caráter exclusivamente institucional e declaratório.
+          Nenhuma lógica interna, fórmula, algoritmo, peso, parâmetro ou
+          mecanismo operacional do GCCI é revelado. A arquitetura conceitual e
+          os mecanismos estruturais permanecem sigilosos e protegidos, conforme
+          descrito na documentação oficial.
+        </p>
+        <p>
+          Todos os direitos autorais sobre o GCCI e sua documentação permanecem
+          com o criador, <strong>Wagner Cócia de Oliveira</strong>, até a futura
+          formalização do <strong>GCCI Institute</strong> como entidade
+          institucional dedicada à governança metodológica e à padronização
+          internacional do índice.
+        </p>
+      </section>
 
-          <div class="doc-list">
-            <!-- Pacote Oficial Completo -->
-            <article class="doc-card">
-              <div class="doc-title">GCCI_Pacote_Oficial_Completo_v1.0.pdf</div>
-              <p class="doc-description">
-                Compilação em um único documento contendo o conjunto de peças
-                oficiais públicas do GCCI v1.0 para consulta integrada.
-              </p>
-              <a
-                class="btn-link"
-                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Pacote_Oficial_Completo_v1.0.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Abrir pacote oficial completo
-              </a>
-            </article>
+      <!-- 2) DOCUMENTAÇÃO ESSENCIAL -->
+      <section id="docs">
+        <span class="eyebrow">Documentação essencial pública</span>
+        <h2>Documentos principais disponíveis para leitura</h2>
+        <p>
+          Estes são os dois documentos centrais para compreensão institucional
+          do GCCI e para a comprovação formal de autoria e integridade.
+        </p>
 
-            <!-- Hashes Oficiais / Autoria -->
-            <article class="doc-card">
-              <div class="doc-title">GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf</div>
-              <p class="doc-description">
-                Declaração oficial de data e autoria com hashes criptográficos
-                dos documentos oficiais do GCCI v1.0, permitindo verificação
-                independente de integridade e anterioridade.
-              </p>
-              <a
-                class="btn-link"
-                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Abrir documento de hashes oficiais
-              </a>
-            </article>
-          </div>
+        <div class="doc-list">
+          <!-- Pacote Oficial Completo -->
+          <article class="doc-card">
+            <div class="doc-title">GCCI_Pacote_Oficial_Completo_v1.0.pdf</div>
+            <p class="doc-description">
+              Compilação em um único documento contendo o conjunto de peças
+              oficiais públicas do GCCI v1.0 para consulta integrada.
+            </p>
+            <a
+              class="btn-link"
+              href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Pacote_Oficial_Completo_v1.0.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir pacote oficial completo
+            </a>
+          </article>
 
-          <p class="aside-note">
-            Para leitura detalhada de biografia, documento do criador, proteção
-            institucional e demais peças, utilize os links oficiais do repositório
-            abaixo.
-          </p>
-        </section>
+          <!-- Hashes Oficiais / Autoria -->
+          <article class="doc-card">
+            <div class="doc-title">GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf</div>
+            <p class="doc-description">
+              Declaração oficial de data e autoria com hashes criptográficos
+              dos documentos oficiais do GCCI v1.0, permitindo verificação
+              independente de integridade e anterioridade.
+            </p>
+            <a
+              class="btn-link"
+              href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir documento de hashes oficiais
+            </a>
+          </article>
+        </div>
 
-        <section id="links">
-          <span class="eyebrow">Acesso completo</span>
-          <h2>Repositório e canais oficiais</h2>
-          <ul class="links-list">
-            <li>
-              <a
-                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Repositório oficial do GCCI no GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/tag/v1.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Release oficial v1.0 — Public Documentation
-              </a>
-            </li>
-            <li>
-              <!-- Substitua pela URL real do seu LinkedIn -->
-              <a
-                href="https://www.linkedin.com/in/SEU-LINKEDIN-AQUI/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Perfil do criador no LinkedIn (Wagner Cócia de Oliveira)
-              </a>
-            </li>
-          </ul>
-        </section>
-      </div>
+        <p class="aside-note">
+          Para leitura detalhada de biografia, documento do criador, proteção
+          institucional e demais peças, utilize os links oficiais do repositório
+          abaixo.
+        </p>
+      </section>
 
-      <!-- Coluna direita: contexto + tabela de dimensões -->
-      <div>
-        <section id="about">
-          <span class="eyebrow">Sobre o GCCI</span>
-          <h2>Enquadramento institucional</h2>
-          <p>
-            O <strong>GCCI — Global Climate Condition Index</strong> é um framework
-            internacional independente que organiza informações públicas em
-            macrodimensões e camadas analíticas, permitindo uma visão integrada,
-            clara e comparável da condição global do planeta.
-          </p>
-          <p>
-            Esta página é exclusivamente institucional e declaratória. Nenhuma
-            lógica interna, fórmula, algoritmo, peso, parâmetro ou mecanismo
-            operacional do GCCI é revelado. Todos os direitos autorais permanecem
-            com o criador.
-          </p>
-        </section>
+      <!-- 3) LINKS OFICIAIS -->
+      <section id="links">
+        <span class="eyebrow">Acesso completo</span>
+        <h2>Repositório e canais oficiais</h2>
+        <ul class="links-list">
+          <li>
+            <a
+              href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Repositório oficial do GCCI no GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/tag/v1.0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Release oficial v1.0 — Public Documentation
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Perfil do criador no LinkedIn (Wagner Cócia de Oliveira)
+            </a>
+          </li>
+        </ul>
+      </section>
 
-        <section id="dimensions">
-          <span class="eyebrow">Camadas / dimensões (visão institucional)</span>
-          <h2>Representação das principais macrodimensões</h2>
-          <p>
-            A tabela abaixo apresenta uma visão ilustrativa das 25 camadas/dimensões
-            em nível institucional, utilizando ícones para representar grandes
-            eixos temáticos. A lógica interna e os mecanismos estruturais
-            permanecem sigilosos e protegidos.
-          </p>
+      <!-- 4) CAMADAS / DIMENSÕES (TABELA VERTICAL, SEM NÚMERO) -->
+      <section id="dimensions">
+        <span class="eyebrow">Camadas / dimensões (visão institucional)</span>
+        <h2>Representação das principais macrodimensões</h2>
+        <p>
+          A tabela abaixo apresenta uma visão ilustrativa das 25
+          camadas/dimensões em nível institucional, utilizando ícones para
+          representar grandes eixos temáticos. A lógica interna, pesos, fórmulas
+          e mecanismos estruturais do GCCI permanecem sigilosos e protegidos.
+        </p>
 
-          <table>
-            <thead>
-              <tr>
-                <th>Dimensão</th>
-                <th>Descrição institucional</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="emoji">🌍 01</td>
-                <td>Condição global agregada</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌡️ 02</td>
-                <td>Temperatura e aquecimento</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌊 03</td>
-                <td>Oceanos e nível do mar</td>
-              </tr>
-              <tr>
-                <td class="emoji">❄️ 04</td>
-                <td>Criosfera (gelo, neve, calotas)</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌧️ 05</td>
-                <td>Padrões de chuva e eventos extremos</td>
-              </tr>
-              <tr>
-                <td class="emoji">🔥 06</td>
-                <td>Secas, ondas de calor e incêndios</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌱 07</td>
-                <td>Ecossistemas e cobertura vegetal</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌳 08</td>
-                <td>Florestas e biomas críticos</td>
-              </tr>
-              <tr>
-                <td class="emoji">🐾 09</td>
-                <td>Biodiversidade e espécies em risco</td>
-              </tr>
-              <tr>
-                <td class="emoji">🏙️ 10</td>
-                <td>Áreas urbanas e pressão antrópica</td>
-              </tr>
-              <tr>
-                <td class="emoji">🏭 11</td>
-                <td>Emissões e atividades industriais</td>
-              </tr>
-              <tr>
-                <td class="emoji">🚗 12</td>
-                <td>Mobilidade, transporte e energia</td>
-              </tr>
-              <tr>
-                <td class="emoji">⚡ 13</td>
-                <td>Matriz energética e transição</td>
-              </tr>
-              <tr>
-                <td class="emoji">💧 14</td>
-                <td>Recursos hídricos e disponibilidade</td>
-              </tr>
-              <tr>
-                <td class="emoji">🌾 15</td>
-                <td>Agricultura e segurança alimentar</td>
-              </tr>
-              <tr>
-                <td class="emoji">👥 16</td>
-                <td>População, vulnerabilidade e risco social</td>
-              </tr>
-              <tr>
-                <td class="emoji">🏥 17</td>
-                <td>Saúde humana e impactos climáticos</td>
-              </tr>
-              <tr>
-                <td class="emoji">📊 18</td>
-                <td>Governança, políticas e compromissos</td>
-              </tr>
-              <tr>
-                <td class="emoji">📉 19</td>
-                <td>Riscos econômicos e perdas</td>
-              </tr>
-              <tr>
-                <td class="emoji">🔬 20</td>
-                <td>Ciência, evidências e observação</td>
-              </tr>
-              <tr>
-                <td class="emoji">🛰️ 21</td>
-                <td>Monitoramento, dados e indicadores</td>
-              </tr>
-              <tr>
-                <td class="emoji">🧩 22</td>
-                <td>Conectividade entre sistemas (interdependências)</td>
-              </tr>
-              <tr>
-                <td class="emoji">⚖️ 23</td>
-                <td>Justiça climática e equidade</td>
-              </tr>
-              <tr>
-                <td class="emoji">💡 24</td>
-                <td>Inovação, resiliência e adaptação</td>
-              </tr>
-              <tr>
-                <td class="emoji">📌 25</td>
-                <td>Síntese estrutural para o índice global</td>
-              </tr>
-            </tbody>
-          </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Eixo</th>
+              <th>Descrição institucional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="emoji">🌍</td>
+              <td>Condição global agregada</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌡️</td>
+              <td>Temperatura e aquecimento</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌊</td>
+              <td>Oceanos e nível do mar</td>
+            </tr>
+            <tr>
+              <td class="emoji">❄️</td>
+              <td>Criosfera (gelo, neve, calotas)</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌧️</td>
+              <td>Padrões de chuva e eventos extremos</td>
+            </tr>
+            <tr>
+              <td class="emoji">🔥</td>
+              <td>Secas, ondas de calor e incêndios</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌱</td>
+              <td>Ecossistemas e cobertura vegetal</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌳</td>
+              <td>Florestas e biomas críticos</td>
+            </tr>
+            <tr>
+              <td class="emoji">🐾</td>
+              <td>Biodiversidade e espécies em risco</td>
+            </tr>
+            <tr>
+              <td class="emoji">🏙️</td>
+              <td>Áreas urbanas e pressão antrópica</td>
+            </tr>
+            <tr>
+              <td class="emoji">🏭</td>
+              <td>Emissões e atividades industriais</td>
+            </tr>
+            <tr>
+              <td class="emoji">🚗</td>
+              <td>Mobilidade, transporte e energia</td>
+            </tr>
+            <tr>
+              <td class="emoji">⚡</td>
+              <td>Matriz energética e transição</td>
+            </tr>
+            <tr>
+              <td class="emoji">💧</td>
+              <td>Recursos hídricos e disponibilidade</td>
+            </tr>
+            <tr>
+              <td class="emoji">🌾</td>
+              <td>Agricultura e segurança alimentar</td>
+            </tr>
+            <tr>
+              <td class="emoji">👥</td>
+              <td>População, vulnerabilidade e risco social</td>
+            </tr>
+            <tr>
+              <td class="emoji">🏥</td>
+              <td>Saúde humana e impactos climáticos</td>
+            </tr>
+            <tr>
+              <td class="emoji">📊</td>
+              <td>Governança, políticas e compromissos</td>
+            </tr>
+            <tr>
+              <td class="emoji">📉</td>
+              <td>Riscos econômicos e perdas</td>
+            </tr>
+            <tr>
+              <td class="emoji">🔬</td>
+              <td>Ciência, evidências e observação</td>
+            </tr>
+            <tr>
+              <td class="emoji">🛰️</td>
+              <td>Monitoramento, dados e indicadores</td>
+            </tr>
+            <tr>
+              <td class="emoji">🧩</td>
+              <td>Conectividade entre sistemas (interdependências)</td>
+            </tr>
+            <tr>
+              <td class="emoji">⚖️</td>
+              <td>Justiça climática e equidade</td>
+            </tr>
+            <tr>
+              <td class="emoji">💡</td>
+              <td>Inovação, resiliência e adaptação</td>
+            </tr>
+            <tr>
+              <td class="emoji">📌</td>
+              <td>Síntese estrutural para o índice global</td>
+            </tr>
+          </tbody>
+        </table>
 
-          <p class="aside-note">
-            A lista acima não revela qualquer ponderação, fórmula, índice numérico
-            ou mecanismo combinatório; trata-se apenas de uma visão institucional
-            dos eixos temáticos considerados.
-          </p>
-        </section>
-      </div>
+        <p class="aside-note">
+          A lista acima não representa ordem de prioridade, peso ou ranking.
+          Trata-se apenas de uma visão institucional dos eixos temáticos
+          considerados no contexto do GCCI.
+        </p>
+      </section>
     </main>
 
     <footer>

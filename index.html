@@ -128,12 +128,6 @@
       max-width: 620px;
     }
 
-    .hero-meta {
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
     main {
       margin-top: 14px;   /* espaço abaixo do header fixo */
       display: flex;
@@ -255,42 +249,36 @@
       margin-top: 6px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 6px;
-      font-size: 14px;
+    /* GRID DE MACRODIMENSÕES (CARDS LADO A LADO) */
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px 10px;
+      margin-top: 8px;
     }
 
-    th, td {
+    .dimension-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: #f9fafb;
+      border-radius: 10px;
       border: 1px solid var(--border);
       padding: 6px 8px;
-      text-align: left;
-      vertical-align: top;
+      font-size: 13.5px;
+      color: var(--text-soft);
     }
 
-    th {
-      background: #f3f4f6;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    td.emoji {
-      width: 40px;
-      text-align: center;
+    .dimension-item .emoji {
       font-size: 18px;
+      line-height: 1.2;
+      margin-top: 1px;
     }
 
-    footer {
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      font-size: 12.5px;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 16px;
-      justify-content: space-between;
+    @media (max-width: 900px) {
+      .dimensions-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
@@ -304,6 +292,21 @@
       footer {
         flex-direction: column;
       }
+      .dimensions-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+
+    footer {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      justify-content: space-between;
     }
   </style>
 </head>
@@ -328,10 +331,6 @@
           operacionais, com foco em integridade, autoria e estrutura
           institucional.
         </p>
-        <div class="hero-meta">
-          Criado por Wagner Cócia de Oliveira — Campinas, São Paulo, Brasil.  
-          Entidade institucional planejada: GCCI Institute.
-        </div>
       </div>
     </header>
 
@@ -450,130 +449,122 @@
         </ul>
       </section>
 
-      <!-- 4) CAMADAS / DIMENSÕES (TABELA VERTICAL, SEM NÚMERO) -->
+      <!-- 4) CAMADAS / DIMENSÕES (GRID DE CARDS, SEM NÚMERO) -->
       <section id="dimensions">
         <span class="eyebrow">Camadas / dimensões (visão institucional)</span>
         <h2>Representação das principais macrodimensões</h2>
         <p>
-          A tabela abaixo apresenta uma visão ilustrativa das 25
+          A grade abaixo apresenta uma visão ilustrativa das 25
           camadas/dimensões em nível institucional, utilizando ícones para
           representar grandes eixos temáticos. A lógica interna, pesos, fórmulas
           e mecanismos estruturais do GCCI permanecem sigilosos e protegidos.
         </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Eixo</th>
-              <th>Descrição institucional</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="emoji">🌍</td>
-              <td>Condição global agregada</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌡️</td>
-              <td>Temperatura e aquecimento</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌊</td>
-              <td>Oceanos e nível do mar</td>
-            </tr>
-            <tr>
-              <td class="emoji">❄️</td>
-              <td>Criosfera (gelo, neve, calotas)</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌧️</td>
-              <td>Padrões de chuva e eventos extremos</td>
-            </tr>
-            <tr>
-              <td class="emoji">🔥</td>
-              <td>Secas, ondas de calor e incêndios</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌱</td>
-              <td>Ecossistemas e cobertura vegetal</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌳</td>
-              <td>Florestas e biomas críticos</td>
-            </tr>
-            <tr>
-              <td class="emoji">🐾</td>
-              <td>Biodiversidade e espécies em risco</td>
-            </tr>
-            <tr>
-              <td class="emoji">🏙️</td>
-              <td>Áreas urbanas e pressão antrópica</td>
-            </tr>
-            <tr>
-              <td class="emoji">🏭</td>
-              <td>Emissões e atividades industriais</td>
-            </tr>
-            <tr>
-              <td class="emoji">🚗</td>
-              <td>Mobilidade, transporte e energia</td>
-            </tr>
-            <tr>
-              <td class="emoji">⚡</td>
-              <td>Matriz energética e transição</td>
-            </tr>
-            <tr>
-              <td class="emoji">💧</td>
-              <td>Recursos hídricos e disponibilidade</td>
-            </tr>
-            <tr>
-              <td class="emoji">🌾</td>
-              <td>Agricultura e segurança alimentar</td>
-            </tr>
-            <tr>
-              <td class="emoji">👥</td>
-              <td>População, vulnerabilidade e risco social</td>
-            </tr>
-            <tr>
-              <td class="emoji">🏥</td>
-              <td>Saúde humana e impactos climáticos</td>
-            </tr>
-            <tr>
-              <td class="emoji">📊</td>
-              <td>Governança, políticas e compromissos</td>
-            </tr>
-            <tr>
-              <td class="emoji">📉</td>
-              <td>Riscos econômicos e perdas</td>
-            </tr>
-            <tr>
-              <td class="emoji">🔬</td>
-              <td>Ciência, evidências e observação</td>
-            </tr>
-            <tr>
-              <td class="emoji">🛰️</td>
-              <td>Monitoramento, dados e indicadores</td>
-            </tr>
-            <tr>
-              <td class="emoji">🧩</td>
-              <td>Conectividade entre sistemas (interdependências)</td>
-            </tr>
-            <tr>
-              <td class="emoji">⚖️</td>
-              <td>Justiça climática e equidade</td>
-            </tr>
-            <tr>
-              <td class="emoji">💡</td>
-              <td>Inovação, resiliência e adaptação</td>
-            </tr>
-            <tr>
-              <td class="emoji">📌</td>
-              <td>Síntese estrutural para o índice global</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="dimensions-grid">
+          <div class="dimension-item">
+            <span class="emoji">🌍</span>
+            <span>Condição global agregada</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌡️</span>
+            <span>Temperatura e aquecimento</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌊</span>
+            <span>Oceanos e nível do mar</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">❄️</span>
+            <span>Criosfera (gelo, neve, calotas)</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌧️</span>
+            <span>Padrões de chuva e eventos extremos</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🔥</span>
+            <span>Secas, ondas de calor e incêndios</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌱</span>
+            <span>Ecossistemas e cobertura vegetal</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌳</span>
+            <span>Florestas e biomas críticos</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🐾</span>
+            <span>Biodiversidade e espécies em risco</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🏙️</span>
+            <span>Áreas urbanas e pressão antrópica</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🏭</span>
+            <span>Emissões e atividades industriais</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🚗</span>
+            <span>Mobilidade, transporte e energia</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">⚡</span>
+            <span>Matriz energética e transição</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">💧</span>
+            <span>Recursos hídricos e disponibilidade</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🌾</span>
+            <span>Agricultura e segurança alimentar</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">👥</span>
+            <span>População, vulnerabilidade e risco social</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🏥</span>
+            <span>Saúde humana e impactos climáticos</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">📊</span>
+            <span>Governança, políticas e compromissos</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">📉</span>
+            <span>Riscos econômicos e perdas</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🔬</span>
+            <span>Ciência, evidências e observação</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🛰️</span>
+            <span>Monitoramento, dados e indicadores</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">🧩</span>
+            <span>Conectividade entre sistemas (interdependências)</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">⚖️</span>
+            <span>Justiça climática e equidade</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">💡</span>
+            <span>Inovação, resiliência e adaptação</span>
+          </div>
+          <div class="dimension-item">
+            <span class="emoji">📌</span>
+            <span>Síntese estrutural para o índice global</span>
+          </div>
+        </div>
 
         <p class="aside-note">
-          A lista acima não representa ordem de prioridade, peso ou ranking.
+          A grade acima não representa ordem de prioridade, peso ou ranking.
           Trata-se apenas de uma visão institucional dos eixos temáticos
           considerados no contexto do GCCI.
         </p>

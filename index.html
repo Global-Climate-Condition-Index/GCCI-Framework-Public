@@ -8,20 +8,20 @@
     name="description"
     content="GCCI — Global Climate Condition Index. Documentação pública oficial v1.0, institucional e declaratória, sem divulgação de lógica interna, algoritmos ou mecanismos estruturais."
   />
-  <!-- aqui usamos o caminho relativo ao próprio index.html dentro de /public -->
+  <!-- Ajuste este caminho se necessário, de acordo com onde está a logomarca -->
   <link rel="icon" href="docs/GCCI_Logomarca.png" />
 
   <style>
     :root {
-      --bg: #020617;
-      --bg-alt: #0b1220;
-      --card: #0f172a;
-      --card-alt: #111827;
+      --bg: #0b1220;
+      --bg-alt: #0f172a;
+      --card: #111827;
+      --card-alt: #020617;
       --accent: #1d9bf0;
-      --accent-soft: rgba(29,155,240,0.12);
-      --border: #1f2937;
+      --accent-soft: rgba(29,155,240,0.14);
+      --border: #cbd5f5;
       --text: #e5e7eb;
-      --text-soft: #cbd5f5;
+      --text-soft: #e2e8f0;
       --text-muted: #94a3b8;
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
@@ -34,10 +34,10 @@
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #020617 100%);
+      background: radial-gradient(circle at top, #1e293b 0, #020617 60%, #020617 100%);
       color: var(--text);
       font-family: var(--font-main);
-      font-size: 15px; /* maior que antes */
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -51,7 +51,7 @@
     }
 
     .page {
-      max-width: 1120px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 24px 16px 48px;
     }
@@ -61,12 +61,12 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 24px;
-      padding: 20px 22px 24px;
-      margin-bottom: 26px;
+      padding: 22px 22px 24px;
+      margin-bottom: 28px;
       border-radius: 20px;
-      background: linear-gradient(135deg, #1d283a 0, #020617 72%);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.75);
+      background: linear-gradient(135deg, #1f2937 0, #020617 72%);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.8);
     }
 
     .logo-wrap {
@@ -77,17 +77,17 @@
     }
 
     .logo-wrap img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
-      border-radius: 16px;
-      background: #0b1120;
+      border-radius: 18px;
+      background: #020617;
       padding: 10px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.65);
     }
 
     .hero-text {
-      flex: 1 1 260px;
+      flex: 1 1 280px;
       min-width: 0;
     }
 
@@ -95,10 +95,10 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 11px;
+      padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -119,14 +119,14 @@
     }
 
     h1 {
-      font-size: clamp(28px, 3.4vw, 34px); /* maior */
-      margin: 0 0 6px;
+      font-size: clamp(30px, 3.6vw, 36px);
+      margin: 0 0 8px;
     }
 
     .hero-subtitle {
-      font-size: 16px; /* maior */
+      font-size: 16.5px;
       color: var(--text-soft);
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .hero-meta {
@@ -134,7 +134,7 @@
       flex-wrap: wrap;
       gap: 8px 16px;
       margin-top: 12px;
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--text-muted);
     }
 
@@ -142,10 +142,10 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.88);
-      border: 1px solid rgba(55, 65, 81, 0.8);
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55, 65, 81, 0.85);
     }
 
     main {
@@ -154,7 +154,7 @@
       gap: 20px;
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 900px) {
       main {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -164,13 +164,13 @@
       background: linear-gradient(to bottom right, var(--card), var(--card-alt));
       border-radius: 18px;
       padding: 18px 18px 16px;
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.7);
       margin-bottom: 12px;
     }
 
     section h2 {
-      font-size: 17px;
+      font-size: 18px;
       margin: 0 0 10px;
       display: flex;
       flex-direction: column;
@@ -186,7 +186,7 @@
 
     p {
       margin: 0 0 9px;
-      font-size: 14.5px;
+      font-size: 15px;
       line-height: 1.6;
       color: var(--text-soft);
     }
@@ -194,12 +194,12 @@
     ul {
       margin: 6px 0 8px 18px;
       padding: 0;
-      font-size: 14.5px;
+      font-size: 15px;
       color: var(--text-soft);
     }
 
     li + li {
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     .doc-grid {
@@ -214,9 +214,9 @@
       flex-direction: column;
       gap: 5px;
       padding: 11px 12px;
-      border-radius: 13px;
+      border-radius: 14px;
       background: radial-gradient(circle at top left, #111827 0, #020617 72%);
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
       transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
         border-color 0.12s ease-out, background 0.12s ease-out;
     }
@@ -224,7 +224,7 @@
     .doc-card:hover {
       transform: translateY(-1px);
       border-color: var(--accent);
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.9);
       background: radial-gradient(circle at top, #111827 0, #020617 85%);
     }
 
@@ -236,9 +236,9 @@
     }
 
     .doc-title {
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 600;
-      color: #e5e7eb;
+      color: #f9fafb;
     }
 
     .doc-meta {
@@ -246,7 +246,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 6px;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
     }
 
@@ -254,17 +254,17 @@
       padding: 3px 9px;
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(75, 85, 99, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.8);
     }
 
     .pill-accent {
       background: var(--accent-soft);
-      border-color: rgba(56, 189, 248, 0.7);
+      border-color: rgba(56, 189, 248, 0.8);
       color: #e0f2fe;
     }
 
     .doc-description {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--text-muted);
     }
 
@@ -272,7 +272,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 5px;
+      margin-top: 6px;
     }
 
     .btn-link {
@@ -280,11 +280,11 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 7px 12px;
+      padding: 8px 13px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.75);
       background: rgba(15, 23, 42, 0.9);
       color: var(--text);
       text-decoration: none;
@@ -295,7 +295,7 @@
       border-color: rgba(56, 189, 248, 0.9);
       background: linear-gradient(to right, #0ea5e9, #22c55e);
       color: #ecfeff;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.9);
     }
 
     .btn-link.primary:hover {
@@ -309,16 +309,47 @@
     }
 
     .aside-note {
-      font-size: 12.5px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-top: 8px;
     }
 
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .dimension-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--text-soft);
+    }
+
+    .dimension-item span.emoji {
+      font-size: 17px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .links-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .links-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
     footer {
-      margin-top: 28px;
+      margin-top: 30px;
       padding-top: 16px;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      font-size: 12.5px;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 13px;
       color: var(--text-muted);
       display: flex;
       flex-wrap: wrap;
@@ -326,26 +357,24 @@
       justify-content: space-between;
     }
 
-    footer .foot-left {
+    footer .foot-left,
+    footer .foot-right {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
     footer .foot-right {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
       text-align: right;
     }
 
     @media (max-width: 640px) {
       header {
-        padding: 16px 14px 18px;
+        padding: 18px 14px 18px;
       }
       .logo-wrap img {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
       }
       footer {
         flex-direction: column;
@@ -363,7 +392,6 @@
   <div class="page">
     <header>
       <div class="logo-wrap">
-        <!-- logo agora aponta para /public/docs/GCCI_Logomarca.png a partir de /public/index.html -->
         <img src="docs/GCCI_Logomarca.png" alt="GCCI — Global Climate Condition Index logo" />
       </div>
       <div class="hero-text">
@@ -374,8 +402,8 @@
         <h1>GCCI — Global Climate Condition Index</h1>
         <p class="hero-subtitle">
           Conjunto oficial de documentos públicos do GCCI: declaração institucional,
-          biografia, documento do criador, base técnico-declaratória, proteção
-          jurídica e comprovação de autoria com hashes criptográficos.
+          proteção jurídica e comprovação formal de autoria, sem divulgação de lógica
+          interna, algoritmos ou mecanismos operacionais.
         </p>
         <div class="hero-meta">
           <span>Created by Wagner Cócia de Oliveira — Campinas, SP, Brasil</span>
@@ -385,43 +413,42 @@
     </header>
 
     <main>
-      <!-- Coluna esquerda: documentos -->
+      <!-- Coluna esquerda: documentos essenciais + links -->
       <div>
         <section id="docs">
           <h2>
-            <span class="eyebrow">DOCUMENTAÇÃO OFICIAL</span>
+            <span class="eyebrow">DOCUMENTAÇÃO ESSENCIAL PÚBLICA</span>
+            Documentos principais disponíveis para leitura
           </h2>
           <p>
-            Abaixo estão os documentos oficiais incluídos na
-            <strong>GCCI — Public Documentation Official Release v1.0 (2025)</strong>.
-            Todos os arquivos são exclusivamente declaratórios e institucionais;
-            nenhum mecanismo interno, fórmula, algoritmo, peso ou lógica operacional
-            do GCCI é divulgado.
+            Abaixo estão os dois documentos centrais para leitura e referência
+            pública. Eles sintetizam a visão institucional do GCCI e a prova
+            de autoria com hashes criptográficos oficiais.
           </p>
 
           <div class="doc-grid">
-            <!-- Declaração Pública Resumo -->
+            <!-- Pacote Oficial Completo -->
             <article class="doc-card">
               <div class="doc-title-row">
                 <div class="doc-title">
-                  GCCI_Declaracao_Publica_Resumo_v1.1_FINAL.pdf
+                  GCCI_Pacote_Oficial_Completo_v1.0.pdf
                 </div>
                 <div class="doc-meta">
-                  <span class="pill pill-accent">Declaração Pública</span>
+                  <span class="pill pill-accent">Pacote Completo</span>
                 </div>
               </div>
               <p class="doc-description">
-                Declaração pública institucional do GCCI, consolidando o marco
-                oficial de autoria, escopo e natureza do índice.
+                Compilação em um único documento contendo o conjunto de peças
+                oficiais públicas do GCCI v1.0 para consulta integrada.
               </p>
               <div class="doc-actions">
                 <a
                   class="btn-link primary"
-                  href="docs/GCCI_Declaracao_Publica_Resumo_v1.1_FINAL.pdf"
+                  href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Pacote_Oficial_Completo_v1.0.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Abrir declaração
+                  Abrir pacote oficial completo
                 </a>
               </div>
             </article>
@@ -437,234 +464,206 @@
                 </div>
               </div>
               <p class="doc-description">
-                Declaração oficial de data e autoria com hashes criptográficos,
-                permitindo verificação independente de integridade e anterioridade.
+                Declaração oficial de data e autoria com hashes criptográficos
+                dos documentos oficiais do GCCI v1.0, permitindo verificação
+                independente de integridade e anterioridade.
               </p>
               <div class="doc-actions">
                 <a
                   class="btn-link primary"
-                  href="docs/GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf"
+                  href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/download/v1.0/GCCI_Hashes_Oficiais_Declaracao_Autoria_v1.0_FINAL.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Abrir documento de hashes
-                </a>
-              </div>
-            </article>
-
-            <!-- Documento Técnico Oficial -->
-            <article class="doc-card">
-              <div class="doc-title-row">
-                <div class="doc-title">
-                  GCCI_Documento_Tecnico_Oficial_v1.0.pdf
-                </div>
-                <div class="doc-meta">
-                  <span class="pill">Documento Técnico</span>
-                </div>
-              </div>
-              <p class="doc-description">
-                Documento técnico-declaratório que descreve, em alto nível, a
-                natureza do GCCI, suas macrodimensões, camadas e princípios de
-                organização, sem expor a lógica interna ou algoritmos.
-              </p>
-              <div class="doc-actions">
-                <a
-                  class="btn-link secondary"
-                  href="docs/GCCI_Documento_Tecnico_Oficial_v1.0.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir documento técnico
-                </a>
-              </div>
-            </article>
-
-            <!-- Proteção Institucional -->
-            <article class="doc-card">
-              <div class="doc-title-row">
-                <div class="doc-title">
-                  GCCI_Protecao_Institucional_v1.0.pdf
-                </div>
-                <div class="doc-meta">
-                  <span class="pill">Proteção Jurídica</span>
-                </div>
-              </div>
-              <p class="doc-description">
-                Documento jurídico de proteção institucional que define escopo de
-                uso, proibições, direitos autorais e restrições de engenharia
-                reversa e reconstrução técnica.
-              </p>
-              <div class="doc-actions">
-                <a
-                  class="btn-link secondary"
-                  href="docs/GCCI_Protecao_Institucional_v1.0.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir proteção institucional
-                </a>
-              </div>
-            </article>
-
-            <!-- Documento Institucional do Criador -->
-            <article class="doc-card">
-              <div class="doc-title-row">
-                <div class="doc-title">
-                  GCCI_Documento_Institucional_do_Criador_v1.0.pdf
-                </div>
-                <div class="doc-meta">
-                  <span class="pill">Institucional</span>
-                </div>
-              </div>
-              <p class="doc-description">
-                Documento institucional que descreve o criador do GCCI,
-                responsabilidades e relação autoral com o projeto.
-              </p>
-              <div class="doc-actions">
-                <a
-                  class="btn-link secondary"
-                  href="docs/GCCI_Documento_Institucional_do_Criador_v1.0.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir documento do criador
-                </a>
-              </div>
-            </article>
-
-            <!-- Biografia Institucional -->
-            <article class="doc-card">
-              <div class="doc-title-row">
-                <div class="doc-title">
-                  GCCI_Documento_Institucional_Biografia_v1.0.pdf
-                </div>
-                <div class="doc-meta">
-                  <span class="pill">Biografia Institucional</span>
-                </div>
-              </div>
-              <p class="doc-description">
-                Biografia institucional do criador, contextualizando a origem do
-                GCCI, trajetória e motivações relacionadas ao índice.
-              </p>
-              <div class="doc-actions">
-                <a
-                  class="btn-link secondary"
-                  href="docs/GCCI_Documento_Institucional_Biografia_v1.0.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir biografia institucional
-                </a>
-              </div>
-            </article>
-
-            <!-- Pacote Oficial Completo -->
-            <article class="doc-card">
-              <div class="doc-title-row">
-                <div class="doc-title">
-                  GCCI_Pacote_Oficial_Completo_v1.0.pdf
-                </div>
-                <div class="doc-meta">
-                  <span class="pill">Pacote Completo</span>
-                </div>
-              </div>
-              <p class="doc-description">
-                Compilação em um único documento contendo o conjunto de peças
-                oficiais públicas do GCCI para consulta integrada.
-              </p>
-              <div class="doc-actions">
-                <a
-                  class="btn-link secondary"
-                  href="docs/GCCI_Pacote_Oficial_Completo_v1.0.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir pacote completo
+                  Abrir documento de hashes oficiais
                 </a>
               </div>
             </article>
           </div>
 
           <p class="aside-note">
-            Todos os PDFs acima são servidos diretamente a partir da pasta
-            <code>/public/docs</code> deste repositório, garantindo integridade,
-            rastreabilidade e consistência com a release oficial v1.0.
+            Para leitura complementar (biografia, documento do criador, proteção
+            institucional e demais peças), utilize o link para o repositório
+            oficial do GCCI no GitHub logo abaixo.
           </p>
         </section>
 
-        <section id="institute">
+        <section id="links">
           <h2>
-            <span class="eyebrow">GCCI INSTITUTE</span>
+            <span class="eyebrow">ACESSO COMPLETO</span>
+            Repositório e canais oficiais
           </h2>
-          <p>
-            Os documentos desta release descrevem o <strong>GCCI Institute</strong>,
-            entidade institucional planejada para governança metodológica, integridade
-            conceitual e padronização internacional do GCCI.
-          </p>
-          <p>
-            Até sua criação formal, todos os direitos, decisões e responsabilidades
-            relacionadas ao GCCI permanecem sob a titularidade exclusiva de
-            <strong>Wagner Cócia de Oliveira</strong>.
+          <ul class="links-list">
+            <li>
+              <a
+                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Repositório oficial do GCCI no GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/tag/v1.0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Release oficial v1.0 — Public Documentation
+              </a>
+            </li>
+            <li>
+              <!-- Substitua pela URL real do seu LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/SEU-LINKEDIN-AQUI/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Perfil do criador no LinkedIn (Wagner Cócia de Oliveira)
+              </a>
+            </li>
+          </ul>
+          <p class="aside-note">
+            Recomenda-se utilizar estes links oficiais como referência em citações,
+            relatórios técnicos, artigos acadêmicos ou comunicações institucionais
+            sobre o GCCI.
           </p>
         </section>
       </div>
 
-      <!-- Coluna direita: contexto e proteção -->
+      <!-- Coluna direita: contexto e 25 dimensões -->
       <div>
         <section id="about">
           <h2>
             <span class="eyebrow">SOBRE O GCCI</span>
+            Estrutura conceitual em camadas
           </h2>
           <p>
             O <strong>GCCI — Global Climate Condition Index</strong> é um framework
             internacional independente que organiza informações públicas em
-            macrodimensões estruturais e camadas analíticas, permitindo uma visão
-            integrada, clara e comparável da condição global do planeta.
+            macrodimensões e camadas analíticas, permitindo uma visão integrada,
+            clara e comparável da condição global do planeta.
           </p>
           <p>
-            Esta página não divulga qualquer lógica interna, algoritmo, fórmula,
-            peso, parâmetro ou mecanismo operacional. Todo o conteúdo permanece
-            estritamente institucional, declaratório e de caráter informativo.
+            Abaixo, apresentamos uma visão ilustrativa das 25 camadas/dimensões em
+            nível institucional, utilizando ícones para representar os grandes
+            eixos temáticos. Nenhuma lógica interna, fórmula ou mecanismo
+            operacional é divulgado.
           </p>
         </section>
 
-        <section id="protection">
+        <section id="dimensions">
           <h2>
-            <span class="eyebrow">PROTEÇÃO INSTITUCIONAL</span>
+            <span class="eyebrow">CAMADAS / DIMENSÕES (VISÃO INSTITUCIONAL)</span>
+            Representação visual das principais macrodimensões
           </h2>
-          <p>
-            A arquitetura conceitual, a lógica interna e os mecanismos estruturais do
-            GCCI são protegidos. De acordo com o Documento de Proteção Institucional:
-          </p>
-          <ul>
-            <li>o uso comercial, governamental, institucional ou operacional é proibido;</li>
-            <li>é proibida a criação de réplicas, derivados ou sistemas equivalentes;</li>
-            <li>é proibida a engenharia reversa ou reconstrução técnica do GCCI;</li>
-            <li>todos os direitos autorais permanecem com o criador.</li>
-          </ul>
+          <div class="dimensions-grid">
+            <div class="dimension-item">
+              <span class="emoji">🌍</span>
+              <span>Dimensão 01 — Condição global agregada</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌡️</span>
+              <span>Dimensão 02 — Temperatura e aquecimento</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌊</span>
+              <span>Dimensão 03 — Oceanos e nível do mar</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">❄️</span>
+              <span>Dimensão 04 — Criosfera (gelo, neve, calotas)</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌧️</span>
+              <span>Dimensão 05 — Padrões de chuva e eventos extremos</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🔥</span>
+              <span>Dimensão 06 — Secas, ondas de calor e incêndios</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌱</span>
+              <span>Dimensão 07 — Ecossistemas e cobertura vegetal</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌳</span>
+              <span>Dimensão 08 — Florestas e biomas críticos</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🐾</span>
+              <span>Dimensão 09 — Biodiversidade e espécies em risco</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🏙️</span>
+              <span>Dimensão 10 — Áreas urbanas e pressão antrópica</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🏭</span>
+              <span>Dimensão 11 — Emissões e atividades industriais</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🚗</span>
+              <span>Dimensão 12 — Mobilidade, transporte e energia</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">⚡</span>
+              <span>Dimensão 13 — Matriz energética e transição</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">💧</span>
+              <span>Dimensão 14 — Recursos hídricos e disponibilidade</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🌾</span>
+              <span>Dimensão 15 — Agricultura, produção e segurança alimentar</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">👥</span>
+              <span>Dimensão 16 — População, vulnerabilidade e risco social</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🏥</span>
+              <span>Dimensão 17 — Saúde humana e impactos climáticos</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">📊</span>
+              <span>Dimensão 18 — Governança, políticas e compromissos</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">📉</span>
+              <span>Dimensão 19 — Riscos econômicos e perdas</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🔬</span>
+              <span>Dimensão 20 — Ciência, evidências e observação</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🛰️</span>
+              <span>Dimensão 21 — Monitoramento, dados e indicadores</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">🧩</span>
+              <span>Dimensão 22 — Conectividade entre sistemas (interdependências)</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">⚖️</span>
+              <span>Dimensão 23 — Justiça climática e equidade</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">💡</span>
+              <span>Dimensão 24 — Inovação, resiliência e adaptação</span>
+            </div>
+            <div class="dimension-item">
+              <span class="emoji">📌</span>
+              <span>Dimensão 25 — Síntese estrutural para o índice global</span>
+            </div>
+          </div>
+
           <p class="aside-note">
-            Para contatos institucionais, parcerias acadêmicas ou propostas formais,
-            utilize preferencialmente canais verificáveis associados a este repositório.
-          </p>
-        </section>
-
-        <section id="release-link">
-          <h2>
-            <span class="eyebrow">RELEASE NO GITHUB</span>
-          </h2>
-          <p>
-            A documentação pública aqui referenciada está formalmente registrada na
-            release oficial:
-          </p>
-          <p>
-            <a
-              class="btn-link primary"
-              href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/releases/tag/v1.0"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abrir release oficial v1.0 no GitHub
-            </a>
+            Os nomes acima representam uma visão institucional e ilustrativa dos eixos
+            analíticos. A lógica interna, pesos, algoritmos e mecanismos estruturais
+            permanecem sigilosos e protegidos, conforme a documentação oficial.
           </p>
         </section>
       </div>

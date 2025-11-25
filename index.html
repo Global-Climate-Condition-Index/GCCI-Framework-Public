@@ -1,507 +1,293 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>GCCI — Global Climate Condition Index</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GCCI — Global Climate Condition Index. Framework integrado de dados científicos públicos para avaliação da condição global em múltiplas dimensões, criado por Wagner Cócia de Oliveira.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="GCCI — Global Climate Condition Index. Documentação pública oficial, proteção institucional e declaração de autoria de Wagner Cócia de Oliveira." />
+  <meta name="author" content="Wagner Cócia de Oliveira" />
+
   <style>
-    :root {
-      --bg: #f4f7fb;
-      --card-bg: #ffffff;
-      --primary: #0f4c81;
-      --primary-soft: #e0ecf7;
-      --accent: #0f766e;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-soft: #e5e7eb;
-    }
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at top left, #e4efff 0, #f4f7fb 40%, #f9fafb 100%);
-      color: var(--text-main);
-    }
-    .page {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 32px 16px 56px;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
     header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 16px;
+      background: #0b2239;
+      color: #fff;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
     }
-    header img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
-    .title-block h1 {
+    header h1 {
       margin: 0;
-      font-size: 2.0rem;
-      color: var(--primary);
-      letter-spacing: 0.02em;
+      font-size: 2.1rem;
+      letter-spacing: 0.03em;
     }
-    .subtitle {
-      margin: 6px 0 0;
-      font-size: 0.98rem;
-      color: var(--text-muted);
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+      opacity: 0.85;
     }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(15, 76, 129, 0.06);
-      color: var(--primary);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      background: #fff;
+      box-shadow: 0 0 18px rgba(0,0,0,0.04);
     }
-    .hero {
-      background: linear-gradient(135deg, rgba(15,76,129,0.06), rgba(15,118,110,0.04));
-      border-radius: 16px;
-      padding: 20px 18px 22px;
-      border: 1px solid var(--primary-soft);
-      margin-bottom: 18px;
-    }
-    .hero p {
-      margin: 6px 0;
-      line-height: 1.6;
-      font-size: 0.98rem;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .hero-stat {
-      background: rgba(255,255,255,0.75);
-      border-radius: 10px;
-      padding: 10px 12px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.85rem;
-    }
-    .hero-stat span {
-      display: block;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 0.9rem;
-    }
-
-    .lang-toggle {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin: 6px 0 14px;
-      color: var(--text-muted);
-    }
-    .lang-toggle a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .lang-toggle a:hover {
-      text-decoration: underline;
-    }
-
     h2 {
-      margin-top: 18px;
-      font-size: 1.15rem;
-      color: var(--primary);
+      margin-top: 2rem;
+      border-left: 4px solid #0b2239;
+      padding-left: 0.5rem;
+      font-size: 1.25rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
     }
     p {
-      line-height: 1.6;
-      margin: 8px 0;
-      font-size: 0.96rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      padding: 18px 18px 18px;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
-      margin-top: 16px;
-      border: 1px solid rgba(15,76,129,0.05);
-    }
-    .card-soft {
-      background: #f8fafc;
-      border-radius: 14px;
-      padding: 16px 16px 16px;
-      border: 1px solid var(--border-soft);
-      margin-top: 14px;
-    }
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px 18px;
+      margin: 0.4rem 0 0.7rem;
+      font-size: 0.95rem;
     }
     ul {
-      margin: 8px 0 8px 20px;
-      padding-left: 0;
+      padding-left: 1.1rem;
+      margin: 0.3rem 0 0.8rem;
       font-size: 0.95rem;
     }
     li {
-      margin: 2px 0;
+      margin-bottom: 0.25rem;
     }
     a {
-      color: var(--accent);
+      color: #0b2239;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .lang-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-muted);
+    .docs-list a {
+      font-weight: 500;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 18px;
-      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.4);
+      margin-top: 0.5rem;
     }
-    .quote {
-      border-left: 3px solid var(--primary);
-      padding-left: 12px;
-      margin-top: 10px;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #374151;
-    }
-    .quote span {
-      display: block;
-      font-style: normal;
-      margin-top: 6px;
+    .notice {
+      background: #fff7e6;
+      border-left: 4px solid #d48806;
+      padding: 0.75rem 1rem;
+      margin: 1.2rem 0;
       font-size: 0.9rem;
-      color: var(--text-muted);
+    }
+    .legal {
+      background: #f0f5ff;
+      border-left: 4px solid #2f54eb;
+      padding: 0.75rem 1rem;
+      margin: 1.2rem 0 1.6rem;
+      font-size: 0.9rem;
     }
     footer {
-      margin-top: 36px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-soft);
-      padding-top: 12px;
-    }
-    .tokens-inline {
-      font-size: 0.92rem;
-      margin-top: 6px;
-    }
-    .tokens-inline code {
-      background: #e5f3f1;
-      padding: 1px 6px;
-      border-radius: 999px;
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
       font-size: 0.8rem;
-      margin-right: 4px;
+      color: #555;
     }
-
-    @media (max-width: 640px) {
+    .muted {
+      opacity: 0.7;
+      font-size: 0.85rem;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
       header {
-        flex-direction: row;
-        align-items: center;
+        padding: 2rem 1.2rem;
       }
-      header img {
-        width: 64px;
-        height: 64px;
+      header h1 {
+        font-size: 1.7rem;
       }
-      .page {
-        padding: 20px 14px 40px;
+      main {
+        margin: 0;
+        box-shadow: none;
       }
-      .hero {
-        padding: 16px 14px 18px;
+      .columns {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <header id="en">
+    <h1>GCCI — Global Climate Condition Index</h1>
+    <p>Documentação Pública Oficial · Criado por Wagner Cócia de Oliveira · Campinas — São Paulo — Brasil</p>
+    <div class="tag">Versões públicas v1.0 / v1.1</div>
+  </header>
 
-    <!-- Cabeçalho institucional -->
-    <header>
-      <img src="docs/GCCI_Logomarca.png" alt="Logomarca GCCI">
-      <div class="title-block">
-        <div class="pill">GCCI — Global Climate Condition Index</div>
-        <h1>Framework Global de Condição Climática e Ambiental</h1>
-        <p class="subtitle">
-          Framework integrado de dados científicos públicos para avaliação da condição global em múltiplas dimensões.
-        </p>
+  <main>
+    <section>
+      <h2>Sobre o GCCI</h2>
+      <p>
+        O <strong>GCCI — Global Climate Condition Index</strong> é um framework internacional independente
+        dedicado à integração de dados científicos públicos para fornecer uma leitura clara, integrada
+        e comparável da condição global do planeta.
+      </p>
+      <p>
+        A arquitetura do GCCI organiza informações em <strong>macrodimensões estruturais</strong> e
+        <strong>camadas analíticas</strong>, permitindo uma visão sistêmica de clima, sistemas naturais,
+        atmosfera, energia, infraestrutura, economia, governança, sociedade e projeções de futuro.
+      </p>
+      <p class="muted">
+        Esta página apresenta apenas a documentação pública institucional. Elementos técnicos internos,
+        fórmulas, algoritmos, lógicas de cálculo, pesos e mecanismos operacionais não são divulgados.
+      </p>
+    </section>
+
+    <section>
+      <h2>Documentos Oficiais Disponíveis</h2>
+
+      <div class="columns docs-list">
+        <div>
+          <h3>Pacote e Estrutura Técnica</h3>
+          <ul>
+            <li>
+              <a href="public/docs/GCCI_Pacote_Oficial_Completo_v1.0.pdf" target="_blank" rel="noopener">
+                GCCI — Pacote Oficial Completo v1.0
+              </a>
+              <br><span class="muted">Compilação dos documentos técnicos, institucionais e jurídicos em um único arquivo.</span>
+            </li>
+            <li>
+              <a href="public/docs/GCCI_Documento_Tecnico_Oficial_v1.0.pdf" target="_blank" rel="noopener">
+                Documento Técnico Oficial — GCCI v1.0
+              </a>
+              <br><span class="muted">Descreve objetivo geral, macrodimensões estruturais e as 25 camadas analíticas.</span>
+            </li>
+          </ul>
+
+          <h3>Proteção Institucional e Jurídica</h3>
+          <ul>
+            <li>
+              <a href="public/docs/GCCI_Protecao_Institucional_v1.0.pdf" target="_blank" rel="noopener">
+                Documento Jurídico de Proteção — GCCI v1.0
+              </a>
+              <br><span class="muted">Define titularidade, escopo de proteção, elementos confidenciais e proibições
+              de uso, reprodução e engenharia reversa.</span>
+            </li>
+            <li>
+              <a href="public/docs/GCCI_Declaracao_Publica_Resumo_v1.1.pdf" target="_blank" rel="noopener">
+                Declaração Pública de Autoria e Integridade — v1.1
+              </a>
+              <br><span class="muted">Resumo institucional com declaração de autoria e hash criptográfico oficial do pacote.</span>
+            </li>
+            <li>
+              <a href="public/docs/GCCI_Hashes_Declaracao_Data_Autoria_v1.0.pdf" target="_blank" rel="noopener">
+                Hashes Oficiais &amp; Declaração de Data e Autoria — v1.0
+              </a>
+              <br><span class="muted">Registra hashes SHA-256 e SHA-512 dos documentos oficiais e do pacote completo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Documentos Institucionais</h3>
+          <ul>
+            <li>
+              <a href="public/docs/GCCI_Documento_Institucional_do_Criador_v1.0.pdf" target="_blank" rel="noopener">
+                Documento Institucional do Criador — v1.0
+              </a>
+              <br><span class="muted">Identificação institucional do criador e fundamentação do projeto.</span>
+            </li>
+            <li>
+              <a href="public/docs/GCCI_Documento_Institucional_Biografia_v1.0.pdf" target="_blank" rel="noopener">
+                Biografia Institucional — v1.0
+              </a>
+              <br><span class="muted">Apresenta a trajetória, motivações e visão institucional vinculada ao GCCI.</span>
+            </li>
+          </ul>
+
+          <h3>Identidade Visual</h3>
+          <ul>
+            <li>
+              <a href="public/docs/GCCI_Logomarca.png" target="_blank" rel="noopener">
+                Logomarca Oficial — GCCI
+              </a>
+              <br><span class="muted">Uso estritamente institucional, vinculado à identidade do GCCI.</span>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
 
-    <!-- Bloco hero com visão geral -->
-    <section class="hero">
-      <p>
-        O <strong>GCCI (Global Climate Condition Index)</strong> é um framework global independente criado por
-        <strong>Wagner Cócia de Oliveira</strong> para integrar dados científicos públicos e oferecer uma visão unificada da
-        condição global do planeta. O sistema combina climatologia, recursos naturais, sociedade, energia, riscos e tecnologia
-        em um único modelo lógico e auditável.
-      </p>
-      <p>
-        O GCCI organiza informação em <strong>6 macrodimensões</strong> e <strong>25 camadas analíticas</strong>, utilizando
-        exclusivamente dados provenientes de instituições internacionais reconhecidas, como <strong>ONU, IPCC, NASA, NOAA, FAO,
-        ESA, IEA, World Bank</strong>, entre outras.
-      </p>
-
-      <div class="hero-grid">
-        <div class="hero-stat">
-          <span>6 Macrodimensões</span>
-          Estrutura global para clima, água, solo, biodiversidade, sociedade, energia e futuro.
-        </div>
-        <div class="hero-stat">
-          <span>25 Camadas Analíticas</span>
-          Camadas independentes e auditáveis, integrando dados públicos de alta credibilidade.
-        </div>
-        <div class="hero-stat">
-          <span>Dados Públicos e Verificáveis</span>
-          Nenhum dado proprietário. Todas as fontes podem ser conferidas por qualquer instituição.
-        </div>
+      <div class="notice">
+        <strong>Uso permitido:</strong> leitura, estudo, pesquisa e citação com crédito obrigatório ao autor
+        e ao framework.<br />
+        <strong>Uso proibido:</strong> uso comercial, institucional, governamental ou operacional, bem como
+        criação de derivados, variantes, sistemas equivalentes ou qualquer forma de engenharia reversa,
+        sem autorização formal e escrita.
       </div>
     </section>
 
-    <!-- Alternador de idioma -->
-    <div class="lang-toggle">
-      <span>Idioma / Language:</span>
-      <a href="#pt">PT</a> | <a href="#en">EN</a>
-    </div>
-
-    <!-- ====================== PORTUGUÊS ====================== -->
-    <section id="pt">
-      <div class="lang-label">Português (Brasil)</div>
-
-      <!-- Estrutura Científica (PT) -->
-      <div class="card">
-        <h2>Estrutura Científica do GCCI</h2>
-        <p>
-          O GCCI não substitui as instituições científicas — ele as integra. A metodologia utiliza dados públicos oficiais
-          e os organiza em uma arquitetura única, permitindo leitura sistêmica da condição global.
-        </p>
-        <div class="two-col card-soft">
-          <div>
-            <strong>Macrodimensões (6)</strong>
-            <ul>
-              <li>Clima e Atmosfera</li>
-              <li>Águas e Oceanos</li>
-              <li>Terra, Solo e Biosfera</li>
-              <li>Sociedade, Infraestrutura e Risco</li>
-              <li>Energia, Emissões e Economia</li>
-              <li>Futuros Globais (População, IA, Projeções)</li>
-            </ul>
-          </div>
-          <div>
-            <strong>Camadas Analíticas (25)</strong>
-            <p>
-              Cada camada representa um eixo crítico da condição global, incluindo temperatura, eventos extremos,
-              oceanos, água, solo, biodiversidade, poluição, matriz energética, segurança alimentar, risco climático,
-              saúde, IA e demanda energética, entre outros.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Documentos Oficiais (PT) -->
-      <div class="card">
-        <h2>Documentos Oficiais</h2>
-        <p>
-          Estes documentos constituem a base pública e institucional do GCCI, registrando autoria, visão, escopo,
-          arquitetura conceitual e proteção jurídica.
-        </p>
-        <ul>
-          <li>
-            <a href="docs/GCCI_Official_Document_Novembro_2025.pdf" target="_blank">
-              GCCI — Documento Oficial Estrutural (PDF)
-            </a>
-          </li>
-          <li>
-            <a href="docs/GCCI_Protecao_Institucional_Novembro_2025.pdf" target="_blank">
-              GCCI — Proteção Institucional Global (PDF)
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Governança e Tokens (PT) -->
-      <div class="card">
-        <h2>Governança e Propriedade Intelectual</h2>
-        <p>
-          O GCCI é criação original de <strong>Wagner Cócia de Oliveira</strong>. Toda a arquitetura interna de cálculo,
-          incluindo algoritmos, pesos, modelos estatísticos, lógicas de agregação e mecanismos de tokens, permanece
-          confidencial e proprietária.
-        </p>
-        <p>
-          O <strong>GCCI Institute</strong> é uma entidade institucional planejada para o futuro, ainda não constituída,
-          destinada a garantir continuidade, integridade e auditoria independente do índice, conforme sua adoção global.
-        </p>
-        <p class="tokens-inline">
-          <strong>Sistema de Tokens (uso institucional):</strong><br>
-          <code>GCCI-M</code> Measurement Token &nbsp;•&nbsp;
-          <code>GCCI-P</code> Protection Token &nbsp;•&nbsp;
-          <code>GCCI-X</code> Exchange Token
-        </p>
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:6px;">
-          Os tokens são mecanismos institucionais projetados dentro da arquitetura do GCCI. 
-          Seu uso é técnico, regulado e vinculado à futura governança institucional.
-        </p>
-      </div>
-
-      <!-- Fundador (PT) -->
-      <div class="card">
-        <h2>Fundador e Visão</h2>
-        <p>
-          O GCCI foi idealizado e desenvolvido por <strong>Wagner Cócia de Oliveira</strong>, pesquisador independente
-          sediado em Campinas, São Paulo — Brasil. Sem vínculo acadêmico formal ou institucional, o autor estruturou
-          um framework capaz de unificar, de forma neutra e auditável, dados científicos públicos de múltiplas fontes.
-        </p>
-        <div class="quote">
-          “Transformação real começa pela capacidade de entender o que precisa ser transformado.
-          O GCCI nasce para organizar, em uma única visão, dados científicos públicos sobre a condição global e mostrar,
-          com transparência e rigor, quais desafios devem ser priorizados em cada momento — para que humanidade, tecnologia
-          e natureza possam evoluir juntas, de forma responsável.”
-          <span>— Wagner Cócia de Oliveira, criador do GCCI</span>
-        </div>
-      </div>
-
-      <!-- Contato (PT) -->
-      <div class="card">
-        <h2>Contato Oficial</h2>
-        <p><strong>Autor:</strong> Wagner Cócia de Oliveira</p>
-        <p><strong>Local:</strong> Campinas — São Paulo — Brasil</p>
-        <p>
-          <strong>LinkedIn:</strong><br>
-          <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank">
-            www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
-          </a>
-        </p>
-      </div>
-    </section>
-
-    <!-- ====================== ENGLISH ====================== -->
-    <section id="en">
-      <div class="lang-label">English</div>
-
-      <!-- Scientific Structure (EN) -->
-      <div class="card">
-        <h2>Scientific Structure of GCCI</h2>
-        <p>
-          The GCCI does not replace scientific institutions — it integrates them. Its methodology uses official public
-          datasets and organizes them into a single architecture, enabling a systemic reading of the global condition.
-        </p>
-        <div class="two-col card-soft">
-          <div>
-            <strong>Macro Dimensions (6)</strong>
-            <ul>
-              <li>Climate and Atmosphere</li>
-              <li>Waters and Oceans</li>
-              <li>Land, Soil and Biosphere</li>
-              <li>Society, Infrastructure and Risk</li>
-              <li>Energy, Emissions and Economy</li>
-              <li>Global Futures (Population, AI, Projections)</li>
-            </ul>
-          </div>
-          <div>
-            <strong>Analytical Layers (25)</strong>
-            <p>
-              Each layer represents a critical axis of global condition, including temperature, extreme events, oceans,
-              freshwater, soil, biodiversity, pollution, energy matrix, food security, climate risk, health, AI and
-              energy demand, among others.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Official Documents (EN) -->
-      <div class="card">
-        <h2>Official Documents</h2>
-        <p>
-          These documents constitute the public and institutional foundation of GCCI, recording authorship, vision,
-          scope, conceptual architecture and legal protection.
-        </p>
-        <ul>
-          <li>
-            <a href="docs/GCCI_Official_Document_Novembro_2025.pdf" target="_blank">
-              GCCI — Official Structural Document (PDF)
-            </a>
-          </li>
-          <li>
-            <a href="docs/GCCI_Protecao_Institucional_Novembro_2025.pdf" target="_blank">
-              GCCI — Global Institutional Protection Document (PDF)
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Governance & IP (EN) -->
-      <div class="card">
-        <h2>Governance and Intellectual Property</h2>
-        <p>
-          GCCI is an original creation by <strong>Wagner Cócia de Oliveira</strong>. All internal computational
-          architecture — including algorithms, weights, statistical models, aggregation logic and token mechanisms —
-          remains confidential and proprietary.
-        </p>
-        <p>
-          The <strong>GCCI Institute</strong> is a planned future institutional entity, not yet established, designed
-          to ensure continuity, integrity and independent oversight of the index, according to its global adoption.
-        </p>
-        <p class="tokens-inline">
-          <strong>Token System (institutional use):</strong><br>
-          <code>GCCI-M</code> Measurement Token &nbsp;•&nbsp;
-          <code>GCCI-P</code> Protection Token &nbsp;•&nbsp;
-          <code>GCCI-X</code> Exchange Token
-        </p>
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:6px;">
-          Tokens are institutional mechanisms designed within the GCCI architecture. They do not represent public
-          currency nor speculative instruments; their use is technical, regulated and subject to future institutional
-          governance.
-        </p>
-      </div>
-
-      <!-- Founder (EN) -->
-      <div class="card">
-        <h2>Founder and Vision</h2>
-        <p>
-          GCCI was conceived and developed by <strong>Wagner Cócia de Oliveira</strong>, an independent researcher
-          based in Campinas, São Paulo — Brazil. Without formal institutional affiliation, the author structured a
-          framework capable of unifying, in a neutral and auditable way, public scientific data from multiple sources.
-        </p>
-        <div class="quote">
-          “Real transformation begins with understanding what must be transformed.
-          GCCI was created to organize, in a single view, public scientific data on global condition and to show — with
-          transparency and rigor — which challenges should be prioritized at each moment, so that humanity, technology
-          and nature can evolve together, responsibly.”
-          <span>— Wagner Cócia de Oliveira, creator of GCCI</span>
-        </div>
-      </div>
-
-      <!-- Contact (EN) -->
-      <div class="card">
-        <h2>Official Contact</h2>
-        <p><strong>Author:</strong> Wagner Cócia de Oliveira</p>
-        <p><strong>Location:</strong> Campinas — São Paulo — Brazil</p>
-        <p>
-          <strong>LinkedIn:</strong><br>
-          <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank">
-            www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
-          </a>
-        </p>
-      </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer>
+    <section>
+      <h2>GCCI Institute — Estrutura Institucional Futura</h2>
       <p>
-        © 2025 — Wagner Cócia de Oliveira. Todos os direitos reservados / All rights reserved.<br>
-        Este site é uma visão institucional pública do GCCI — Global Climate Condition Index, com base em dados científicos públicos
-        e documentação oficial disponível neste repositório.
+        Os documentos oficiais do GCCI preveem a possível criação do <strong>GCCI Institute</strong>, uma
+        entidade institucional futura destinada à:
       </p>
-    </footer>
+      <ul>
+        <li>governança tecnocientífica do GCCI;</li>
+        <li>preservação metodológica e integridade estrutural;</li>
+        <li>padronização e continuidade institucional;</li>
+        <li>proteção jurídica e coordenação internacional.</li>
+      </ul>
+      <p class="muted">
+        Até que tal entidade seja formalmente constituída, toda titularidade, responsabilidade e proteção
+        institucional permanecem diretamente vinculadas ao criador, Wagner Cócia de Oliveira.
+      </p>
+    </section>
 
-  </div>
+    <section>
+      <h2>Propriedade Intelectual e Proteção</h2>
+      <div class="legal">
+        O GCCI é protegido por direitos autorais e por normas internacionais, incluindo a Convenção de Berna,
+        o Acordo TRIPS/OMC, diretrizes WIPO/OMPI e a legislação brasileira de direitos autorais, conforme
+        descrito no Documento Jurídico de Proteção — GCCI v1.0.
+        <br /><br />
+        Nenhum direito comercial, institucional, operacional ou tecnológico é concedido, licenciado ou
+        transferido por meio deste site ou deste repositório.
+      </div>
+
+      <p>
+        Para qualquer uso que vá além de leitura, estudo, pesquisa ou citação, é obrigatória a
+        <strong>autorização formal e escrita</strong> do autor.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contato Institucional</h2>
+      <p>
+        <strong>Autor:</strong> Wagner Cócia de Oliveira<br />
+        <strong>Local:</strong> Campinas — São Paulo — Brasil<br />
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3" target="_blank" rel="noopener">
+          Perfil profissional no LinkedIn
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2025 — GCCI — Global Climate Condition Index · Todos os direitos reservados.</div>
+    <div class="muted">Este site espelha a documentação pública oficial hospedada no repositório GCCI-Framework-Public (GitHub).</div>
+  </footer>
 </body>
 </html>

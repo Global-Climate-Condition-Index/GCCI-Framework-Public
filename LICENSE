@@ -3,148 +3,108 @@ GCCI Public Institutional Disclosure License — v1.0
 © 2025 — Wagner Cócia de Oliveira  
 Campinas — São Paulo — Brasil
 
-Esta licença regula o uso público permitido e proibido do conteúdo divulgado no
-repositório oficial “GCCI — Global Climate Condition Index”, de titularidade integral
-do autor, conforme Documentação Oficial, Documento Jurídico de Proteção e Declarações
-de Autoria e Hashes Criptográficos.
-
 ---
 
 1. TITULARIDADE E DIREITOS AUTORAIS
 
 1.1. O GCCI — Global Climate Condition Index é obra original de **Wagner Cócia de Oliveira**,
-incluindo sua concepção, estrutura, arquitetura lógica, documentação oficial e elementos
-institucionais.
+incluindo sua concepção, estrutura, arquitetura lógica, organização institucional, documentação
+oficial e elementos conceituais.
 
 1.2. A titularidade abrange integralmente:
-    - macrodimensões estruturais;
-    - camadas analíticas;
-    - descrições conceituais e institucionais;
-    - mecanismos institucionais internos (GCCI-M, GCCI-P, GCCI-X);
-    - documentação técnica, institucional, declaratória e jurídica.
+    - macrodimensões estruturais;  
+    - camadas analíticas;  
+    - descrições públicas e institucionais;  
+    - mecanismos institucionais internos (GCCI-M, GCCI-P, GCCI-X);  
+    - documentação técnica, institucional e jurídica.
 
-1.3. Modelos internos, algoritmos, lógica de cálculo, pesos, agregações, ponderações e
-estruturas operacionais internas do GCCI permanecem **confidenciais, protegidos e não
-divulgados**, conforme Documento Jurídico de Proteção — GCCI v1.0.
+1.3. O **GCCI Institute**, conforme descrito nos documentos oficiais, constitui uma **entidade
+institucional futura planejada**, destinada à governança, preservação metodológica,
+integridade estrutural, padronização e proteção jurídica do GCCI.
+
+1.4. Até a constituição do GCCI Institute, todos os direitos permanecem exclusivamente  
+sob responsabilidade de seu criador.
 
 ---
 
-2. USO PERMITIDO (SEM NECESSIDADE DE AUTORIZAÇÃO)
+2. USO PERMITIDO (SEM AUTORIZAÇÃO)
 
-É permitido exclusivamente:
+Exclusivamente:
 
 • leitura;  
 • estudo;  
 • pesquisa;  
-• citação, desde que preservadas:
+• citação, com crédito obrigatório ao autor e ao framework.
 
-   - autoria (“Wagner Cócia de Oliveira”),  
-   - título (“GCCI — Global Climate Condition Index”),  
-   - versão,  
-   - ano,  
-   - link para o repositório oficial ou documento original.
-
-Nenhum direito adicional é concedido ou transferido por esta licença.
+Nenhum direito adicional é concedido.
 
 ---
 
-3. USO PROIBIDO (SEM AUTORIZAÇÃO FORMAL E ESCRITA)
+3. USO PROIBIDO (SEM AUTORIZAÇÃO FORMAL)
 
-É expressamente proibido:
+É proibido:
 
-3.1. Uso comercial, institucional, governamental, operacional ou corporativo do GCCI.
-
-3.2. Copiar, reproduzir, distribuir, armazenar ou divulgar qualquer parte protegida do
-GCCI com a finalidade de replicação técnica, competitiva, operacional ou institucional.
-
-3.3. Criar obras derivadas, adaptações, variantes, sistemas equivalentes, modelos
-alternativos ou reformulações baseadas no GCCI.
-
-3.4. Realizar engenharia reversa, reconstrução técnica, tentativa de replicação funcional,
-matemática, lógica ou operacional do GCCI — total ou parcial.
-
-3.5. Incorporar o GCCI em:
-    - softwares,
-    - APIs,
-    - plataformas digitais,
-    - índices,
-    - bancos de dados,
-    - relatórios corporativos,
-    - sistemas proprietários,
-    - metodologias de terceiros,
-    sem autorização formal por escrito.
-
-3.6. Utilizar quaisquer elementos do GCCI de forma que possa:
-    - gerar dano, distorção, apropriação ou confusão pública;
-    - induzir terceiros a crer que possuem direitos sobre o framework.
+3.1. uso comercial, institucional, governamental ou operacional;  
+3.2. criação de derivados, variantes, adaptações ou sistemas equivalentes;  
+3.3. engenharia reversa, reconstrução técnica ou tentativa de replicar o funcionamento do GCCI;  
+3.4. incorporação em softwares, APIs, plataformas, bancos de dados ou métodos;  
+3.5. distribuição ou cópia com finalidade competitiva ou técnica.
 
 ---
 
 4. ELEMENTOS CONFIDENCIAIS
 
-Permanecem sob proteção total e não são objeto de divulgação pública:
+Permanecem sob sigilo absoluto:
 
 • modelos matemáticos internos;  
-• algoritmos proprietários;  
+• algoritmos;  
 • lógica de cálculo;  
 • pesos, agregações e ponderações;  
-• estrutura operacional completa;  
-• funcionamento interno dos mecanismos GCCI-M, GCCI-P, GCCI-X.
-
-Tentativas de obtenção, exploração, revelação ou reconstrução desses elementos constituem
-violação direta desta licença e dos direitos autorais internacionais aplicáveis.
+• estruturas operacionais internas;  
+• funcionamento dos mecanismos institucionais internos.
 
 ---
 
-5. NORMAS E TRATADOS APLICÁVEIS
+5. TRATADOS INTERNACIONAIS APLICÁVEIS
 
-A proteção do GCCI é amparada, entre outros, por:
+A proteção está amparada por:
 
 • Convenção de Berna;  
-• Acordo TRIPS / OMC;  
-• Normas WIPO / OMPI;  
-• Legislação brasileira de direitos autorais e correlatas.
-
-A proteção é automática, internacional e independe de registro.
+• Acordo TRIPS/OMC;  
+• Normas WIPO/OMPI;  
+• Legislação brasileira de direitos autorais.
 
 ---
 
-6. DECLARAÇÃO DE ANTERIORIDADE E INTEGRIDADE
+6. DECLARAÇÃO DE ANTERIORIDADE
 
-As versões oficiais do GCCI são acompanhadas de hashes criptográficos
-(SHA-256 e SHA-512), conforme documento:
+Provas oficiais (SHA-256 e SHA-512) estão publicadas em:
 
-“GCCI_Hashes_Declaracao_Data_Autoria_v1.0.pdf”
+**GCCI_Hashes_Declaracao_Data_Autoria_v1.0.pdf**
 
-Esses hashes constituem prova formal de:
+Esses hashes comprovam:
 
-• integridade;  
-• originalidade;  
+• integridade documental;  
 • data de criação;  
 • autoria;  
-• impossibilidade de alteração sem detecção pública.
+• impossibilidade de alteração sem detecção.
 
 ---
 
-7. AUSÊNCIA DE CONCESSÃO DE LICENÇA COMERCIAL
+7. AUSÊNCIA DE LICENÇA COMERCIAL
 
-Nada nesta licença deve ser interpretado como concessão, cessão, permissão, licença
-implícita ou autorização de uso comercial, institucional, operacional ou tecnológico
-do GCCI.
-
-Qualquer utilização que não se enquadre no item 2 desta licença exige **autorização
-formal, nominal e escrita** do autor.
+Nada nesta licença concede permissão para uso operacional, institucional ou comercial.
+Qualquer uso fora do item 2 exige **autorização formal e escrita**.
 
 ---
 
-8. CONTATO OFICIAL
+8. CONTATO
 
-Autor: **Wagner Cócia de Oliveira**  
-Local: Campinas — São Paulo — Brasil  
+Wagner Cócia de Oliveira  
+Campinas — São Paulo — Brasil  
 LinkedIn: https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
 
 ---
 
-© 2025 — GCCI — Global Climate Condition Index  
-Todos os direitos reservados.
-
+Todos os direitos reservados.  
+© 2025 — GCCI — Global Climate Condition Index

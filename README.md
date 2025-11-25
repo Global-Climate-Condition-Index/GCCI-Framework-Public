@@ -4,17 +4,17 @@ Repositório Oficial — Documentação Pública v1.0/v1.1
 Este repositório contém a documentação pública oficial do **GCCI — Global Climate Condition Index**,  
 criado e desenvolvido por **Wagner Cócia de Oliveira**, Campinas — São Paulo — Brasil.
 
-O conteúdo aqui publicado tem caráter **institucional, documental e declaratório**.  
-Nenhum elemento técnico interno, estrutura operacional, lógica de cálculo, ponderações, pesos,
-modelos matemáticos ou mecanismos institucionais internos do GCCI são divulgados publicamente.
+O conteúdo aqui disponibilizado possui caráter **institucional, documental e declaratório**.  
+Nenhuma parte técnica interna, lógica operacional, pesos, algoritmos, cálculos, estrutura  
+matemática, mecanismos internos ou funcionamento integral do GCCI é divulgada nesta versão.
 
 ---
 
 ## 📘 O Que é o GCCI
 
 O **GCCI — Global Climate Condition Index** é um framework internacional independente dedicado  
-à integração de dados científicos públicos para avaliação clara, integrada e comparável  
-da condição global.
+à integração de dados científicos públicos para fornecer uma leitura clara, integrada e comparável  
+da condição global do planeta.
 
 Ele organiza informações em:
 
@@ -23,13 +23,32 @@ Ele organiza informações em:
 - **Mecanismos Institucionais Internos (GCCI-M, GCCI-P, GCCI-X)**  
   *(apresentados publicamente apenas em nível conceitual, sem divulgação técnica)*
 
-Esses elementos estão descritos nos documentos oficiais incluídos neste repositório.
+Esses elementos são descritos nos documentos oficiais disponíveis neste repositório.
+
+---
+
+## 🏛 O GCCI Institute (Entidade Institucional Planejada)
+
+Conforme descrito nos documentos oficiais:
+
+- O **GCCI Institute** é uma **entidade institucional futura** planejada para assumir:
+  - governança tecnocientífica do GCCI  
+  - preservação metodológica  
+  - integridade estrutural  
+  - padronização  
+  - proteção jurídica  
+  - continuidade institucional  
+
+> Essas funções são mencionadas no Documento Jurídico de Proteção, no Documento Institucional do Criador  
+> e na Biografia Institucional, sempre como **estrutura futura**, ainda não constituída.
+
+Até sua criação, **todos os direitos, responsabilidades e titularidade permanecem exclusivamente com o autor**.
 
 ---
 
 ## 📂 Documentos Oficiais (pasta `/public/docs`)
 
-Esta pasta contém todos os documentos oficiais enviados pelo autor, incluindo:
+Esta pasta contém:
 
 - **GCCI_Pacote_Oficial_Completo_v1.0.pdf**  
 - **GCCI_Documento_Tecnico_Oficial_v1.0.pdf**  
@@ -40,80 +59,75 @@ Esta pasta contém todos os documentos oficiais enviados pelo autor, incluindo:
 - **GCCI_Hashes_Declaracao_Data_Autoria_v1.0.pdf**  
 - **GCCI_Logomarca.png**
 
-Estas versões são as **únicas oficiais**, devidamente registradas e assinadas digitalmente  
-via **hashes criptográficos SHA-256 e SHA-512**, conforme documentação.
+Todos estes arquivos são as **versões oficiais** publicadas pelo autor.
 
 ---
 
 ## 🔐 Propriedade Intelectual e Proteção
 
-Conforme o **Documento Jurídico de Proteção — GCCI v1.0**, este repositório está protegido por:
+Conforme o Documento Jurídico de Proteção — GCCI v1.0:
+
+- toda a arquitetura conceitual do GCCI está protegida  
+- as macrodimensões, camadas analíticas e descrições institucionais estão protegidas  
+- os mecanismos institucionais internos (GCCI-M, GCCI-P, GCCI-X) também estão protegidos  
+- elementos técnicos internos permanecem confidenciais e não divulgados  
+
+A proteção está amparada por:
 
 - Convenção de Berna  
 - Acordo TRIPS / OMC  
 - Normas WIPO / OMPI  
 - Legislação brasileira de direitos autorais  
 
-A proteção abrange integralmente:
-
-- a arquitetura conceitual do GCCI;  
-- as macrodimensões estruturais;  
-- as 25 camadas analíticas;  
-- as descrições institucionais, científicas e públicas;  
-- os mecanismos institucionais internos (GCCI-M, GCCI-P, GCCI-X).  
-
 ---
 
-## ❌ Uso Proibido (sem autorização formal por escrito)
+## ❌ Uso Proibido (sem autorização por escrito)
 
-- uso comercial, institucional, governamental ou operacional;  
-- criação de modelos derivados, adaptações, variantes ou réplicas;  
-- engenharia reversa, tentativa de reconstrução funcional ou lógica interna;  
-- incorporação em sistemas, plataformas digitais, índices ou softwares;  
-- redistribuição, cópia ou armazenamento com finalidade técnica ou competitiva.
+- uso comercial, governamental, institucional ou operacional  
+- criação de derivados, variantes, adaptações ou sistemas equivalentes  
+- engenharia reversa, tentativa de reconstrução operacional, lógica ou matemática  
+- incorporação em softwares, APIs, plataformas ou metodologias  
+- redistribuição com finalidade técnica, institucional ou competitiva  
 
 ---
 
 ## ✔️ Uso Permitido
 
-- leitura;  
-- estudo;  
-- pesquisa;  
-- citação com crédito obrigatório ao autor e ao framework.
+- leitura  
+- estudo  
+- pesquisa  
+- citação com crédito obrigatório  
 
-Citação mínima recomendada:
+Citação recomendada:
 
 > GCCI — Global Climate Condition Index (v1.0 / v1.1).  
 > Autor: Wagner Cócia de Oliveira.  
-> Campinas, São Paulo — Brasil (2025).  
+> Campinas — São Paulo — Brasil (2025).  
 > Repositório oficial: https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public
 
 ---
 
-## 🧾 Declaração Pública, Hashes e Prova de Autoria
+## 🧾 Declaração Pública e Hashes Oficiais
 
-As provas oficiais de integridade e anterioridade estão publicadas em:
+As provas formais de integridade e anterioridade estão em:
 
 - **GCCI_Hashes_Declaracao_Data_Autoria_v1.0.pdf**  
 - **GCCI_Declaracao_Publica_Resumo_v1.1.pdf**
 
-Esses documentos contêm:
+Incluindo:
 
-- hash SHA-256 de cada arquivo;  
-- hash SHA-512 de cada arquivo;  
-- hash do pacote completo;  
-- registro de data oficial;  
-- declaração formal do autor.
+- hash SHA-256 e SHA-512 de cada documento  
+- hash do pacote completo  
+- data oficial  
+- assinatura pública de autoria  
 
 ---
 
-## 🌐 Site Oficial (GitHub Pages)
+## 🌐 Site Oficial — GitHub Pages
 
-A versão pública institucional do GCCI está disponível em:
+Versão institucional pública do GCCI:
 
-👉 **https://global-climate-condition-index.github.io/GCCI-Framework-Public/**
-
-O site replica e referencia exclusivamente os documentos oficiais deste repositório.
+👉 https://global-climate-condition-index.github.io/GCCI-Framework-Public/
 
 ---
 
@@ -132,12 +146,9 @@ https://www.linkedin.com/in/wagner-cócia-de-oliveira-32660a2a3
 
 Este repositório funciona como **registro público de anterioridade**, assegurando:
 
-- integridade documental  
+- integridade  
+- autenticidade  
 - prova de autoria  
-- transparência institucional  
-- impossibilidade de contestação futura**  
-- fortalecimento jurídico internacional**  
+- proteção jurídica internacional  
 
-Nenhum direito é cedido, licenciado ou transferido por meio deste repositório.
-
-
+Nenhum direito é transferido ou licenciado através deste repositório.

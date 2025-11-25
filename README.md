@@ -1,5 +1,5 @@
 # GCCI — Global Climate Condition Index  
-Repositório Oficial — Documentação Pública v1.0/v1.1
+Repositório Oficial — Documentação Pública v1.0
 
 Este repositório contém a documentação pública oficial do **GCCI — Global Climate Condition Index**,  
 criado e desenvolvido por **Wagner Cócia de Oliveira**, Campinas — São Paulo — Brasil.

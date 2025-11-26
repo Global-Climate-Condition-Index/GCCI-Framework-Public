@@ -289,24 +289,9 @@
         width: 130px;
         height: 130px;
       }
-      footer {
-        flex-direction: column;
-      }
       .dimensions-grid {
         grid-template-columns: repeat(1, minmax(0, 1fr));
       }
-    }
-
-    footer {
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      font-size: 12.5px;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 16px;
-      justify-content: space-between;
     }
   </style>
 </head>
@@ -571,42 +556,25 @@
       </section>
     </main>
 
-    <style>
-   footer {
-      width: 100%;
-      text-align: center;
-      font-size: 13px;
-      color: #444;
-      margin-top: 40px;
-      padding: 25px 10px;
-      line-height: 1.55;
-   }
-   .foot-block { margin-bottom: 10px; }
-   .foot-hash { font-size: 12.5px; margin-top: 14px; font-weight: bold; }
-   .foot-link { font-size: 12px; margin-top: 4px; }
-   .foot-link a { color: #444; text-decoration: underline; }
-</style>
+    <!-- NOVO RODAPÉ COM HASH E AUDITORIA -->
+    <hr>
 
-<footer>
-
-   <div class="foot-block">
-      © 2025 — GCCI™ — Global Climate Condition Index<br>
-      © 2025 — Wagner Cócia de Oliveira — Campinas, São Paulo, Brasil
-   </div>
-
-   <div class="foot-block">
-      Public Documentation Official Release — v1.0 (2025)<br>
-      Entidade institucional planejada: GCCI Institute
-   </div>
-
-   <div class="foot-hash">
-      Hash Oficial da Versão v1.0:<br>
-      93a327dde6a18a0eb6d3dd9727e11e2be8e08d2e2864dc6737f6085d3ce82509
-   </div>
-
-   <div class="foot-link">
-      Auditoria Pública de Integridade: 
-      <a href="docs/INTEGRITY.md" target="_blank">/docs/INTEGRITY.md</a>
-   </div>
-
-</footer>
+    <footer style="
+        font-size:14px;
+        text-align:center;
+        padding:18px 12px;
+        opacity:0.95;
+        line-height:1.55;
+        color:#374151;
+    ">
+        © 2025 — GCCI™ — Global Climate Condition Index<br>
+        Hash Oficial da Versão v1.0:<br>
+        <strong>93a327dde6a18a0eb6d3dd9727e11e2be8e08d2e2864dc6737f6085d3ce82509</strong><br>
+        Auditoria de Integridade:
+        <a href="docs/INTEGRITY.md" style="color:#1d4ed8; font-weight:500;">
+            /docs/INTEGRITY.md
+        </a>
+    </footer>
+  </div>
+</body>
+</html>

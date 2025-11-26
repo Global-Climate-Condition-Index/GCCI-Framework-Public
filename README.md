@@ -1,3 +1,13 @@
+📌 Versão Oficial do GCCI™ v1.0
+
+SHA-256: 93a327dde6a18a0eb6d3dd9727e11e2be8e08d2e2864dc6737f6085d3ce82509  
+SHA-512: edf5e84f0b7fef42c8ced2cac749e05258513938e6a1fb2e13a392faea223ef07bdd67e14f661ac1aa5daf9f5f282313d7ad1584161b0905273930b21e3a1afd  
+
+Documentação Oficial e Auditoria de Integridade:  
+/docs/INTEGRITY.md
+
+---
+
 # GCCI — Global Climate Condition Index  
 Repositório Oficial — Documentação Pública v1.0
 

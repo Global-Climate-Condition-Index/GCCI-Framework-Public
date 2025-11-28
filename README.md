@@ -162,3 +162,57 @@ Este repositório funciona como **registro público de anterioridade**, assegura
 - proteção jurídica internacional  
 
 Nenhum direito é transferido ou licenciado através deste repositório.
+
+### DOCUMENTAÇÃO JURÍDICA E DE INTEGRIDADE — GCCI™
+
+Este repositório mantém a estrutura formal de proteção intelectual, política de uso e auditoria pública do GCCI™ — Global Climate Condition Index.
+
+---
+
+#### 1. Documentos Jurídicos Oficiais
+
+| Documento | Descrição |
+|---------|-----------|
+| LEGAL.md | Termo jurídico central do repositório. Define proteção autoral, limites de uso e obrigações legais. |
+| NOTICE.md | Aviso público institucional reforçando direitos autorais e proibições de exploração comercial. |
+| TERMS.md | Termos de uso do repositório e da documentação associada. |
+| SECURITY.md | Diretrizes para reporte de abuso, tentativa de cópia ou uso indevido. |
+
+Nenhum uso comercial, governamental ou institucional é permitido sem autorização formal.
+
+---
+
+#### 2. Registro Oficial de Integridade — Auditoria Criptográfica
+
+| Arquivo | Função |
+|--------|--------|
+| INTEGRITY.md | Registro-mestre contendo os hashes auditáveis de todas as versões oficiais. |
+| HASHES_LEGAL_v1.0.md | Registro criptográfico da versão jurídica oficial do arquivo LEGAL.md (PDF v1.0). |
+| GCCI_LEGAL.md.pdf | Documento jurídico imutável da versão 1.0 com hash autorizado. |
+
+A verificação da legitimidade de um arquivo deve sempre ser realizada comparando seus hashes com o conteúdo publicado em `INTEGRITY.md`.
+
+---
+
+#### 3. Provas Públicas Reconhecidas de Autoria e Anterioridade
+
+| Mecanismo | Status |
+|----------|--------|
+| Repositório GitHub público | Ativo e auditável |
+| GitHub Pages institucional | Disponível e acessível publicamente |
+| Publicação oficial no LinkedIn com hash autenticado | Registrada e datada |
+| E-mail indexado com timestamp e anexos oficiais (24/11/2025) | Validado como prova externa |
+
+Essas camadas cruzadas de visibilidade e verificação formam o núcleo de proteção do GCCI™.
+
+---
+
+#### 4. Declaração Final de Proteção
+
+O conteúdo deste repositório está protegido por legislação internacional de direitos autorais (Convenção de Berna, TRIPS/OMC, WIPO/OMPI) e pela legislação nacional vigente.  
+O método de cálculo, os algoritmos internos, pesos, fórmulas, arquitetura estrutural e lógica de composição do índice constituem propriedade intelectual restrita do GCCI™.
+
+---
+
+Inserir abaixo da última seção do README.md sem alterações estruturais.
+

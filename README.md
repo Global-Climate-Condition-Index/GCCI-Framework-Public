@@ -213,6 +213,3 @@ O conteúdo deste repositório está protegido por legislação internacional de
 O método de cálculo, os algoritmos internos, pesos, fórmulas, arquitetura estrutural e lógica de composição do índice constituem propriedade intelectual restrita do GCCI™.
 
 ---
-
-Inserir abaixo da última seção do README.md sem alterações estruturais.
-

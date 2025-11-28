@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>GCCI™ – TAG-01 · Temperatura e Aquecimento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --bg-page: #f3f4f6;
+      --bg-card: #ffffff;
+      --bg-soft: #e5e7eb;
+      --border: #d1d5db;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --danger: #b91c1c;
+      --ok: #15803d;
+      --shadow-soft: 0 10px 26px rgba(15, 23, 42, 0.10);
+      --radius-card: 16px;
+    }
+
+    /* DARK MODE – override */
+    :root.dark {
+      --bg-page: #020617;
+      --bg-card: #020617;
+      --bg-soft: #111827;
+      --border: #1f2937;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --accent: #60a5fa;
+      --danger: #f97373;
+      --ok: #4ade80;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e5e7eb 0, #f9fafb 70%);
+      color: var(--text-main);
+    }
+    body.dark {
+      background: radial-gradient(circle at top left, #020617 0, #020617 70%);
+    }
+
+    .page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.5;
+    }
+
+    .subtitle-small {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .pill-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      background: linear-gradient(to right, #eff6ff, #ffffff);
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+    .meta strong { color: var(--text-main); }
+
+    .meta-actions {
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-ghost {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(249, 250, 251, 0.85);
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+    body.dark .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      header { flex-direction: column; }
+      .meta { text-align: left; }
+      .meta-actions { justify-content: flex-start; }
+    }
+
+    /* CARDS */
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .grid-kpi {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 900px){
+      .grid-kpi { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .kpi-value {
+      font-size: 2rem;
+      font-weight: 650;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .kpi-unit {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .kpi-prev {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #fef9c3;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .kpi-delta {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .kpi-delta.positive {
+      color: var(--danger);
+      background: #fee2e2;
+      border-color: #fecaca;
+    }
+
+    .kpi-delta.negative {
+      color: var(--ok);
+      background: #dcfce7;
+      border-color: #bbf7d0;
+    }
+
+    /* ANIMAÇÃO KPI */
+    @keyframes kpiPop {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+    .kpi-pop {
+      animation: kpiPop 0.45s ease-out;
+    }
+
+    /* GAUGE – régua 0–100 com ruptura e seta abaixo */
+
+    .gauge {
+      margin-top: 10px;
+      padding-bottom: 16px; /* espaço para a seta + rótulos */
+      position: relative;
+    }
+
+    .gauge-track {
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #b91c1c, #f97316, #eab308, #22c55e, #15803d);
+      position: relative;
+      overflow: visible; /* seta aparece fora da barra */
+    }
+
+    .gauge-gap {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 100%;
+      background: #f9fafb;
+    }
+    body.dark .gauge-gap {
+      background: #020617;
+    }
+
+    .gauge-marker {
+      position: absolute;
+      top: 100%;
+      margin-top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 10px solid #111827;  /* seta para cima */
+    }
+    body.dark .gauge-marker {
+      border-top-color: #f9fafb;
+    }
+
+    .gauge-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 8px; /* um pouco mais para caber a seta */
+    }
+
+    .caption {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .caption-score {
+      margin-top: 12px; /* texto amarelo mais para baixo */
+    }
+
+    /* RISCO SCALE */
+
+    .risk-scale {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 4px;
+      font-size: 0.78rem;
+    }
+    .risk-box {
+      position: relative;
+      padding: 4px 6px;
+      border-radius: 8px;
+      text-align: center;
+      background: #f3f4f6;
+      color: var(--text-muted);
+      cursor: default;
+    }
+    .risk-box.active {
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 600;
+      border: 1px solid #facc15;
+    }
+
+    .risk-box[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 115%;
+      background: rgba(15,23,42,0.96);
+      color: #f9fafb;
+      font-size: 0.7rem;
+      padding: 4px 6px;
+      border-radius: 6px;
+      max-width: 180px;
+      white-space: normal;
+      z-index: 20;
+    }
+    .risk-box[data-tip]:hover::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 108%;
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgba(15,23,42,0.96) transparent transparent transparent;
+      z-index: 19;
+    }
+
+    /* BLOCO DE LIMIARES */
+
+    .threshold-block {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.8rem;
+    }
+    .threshold-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .threshold-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+    }
+    .threshold-item {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #f3f4f6;
+    }
+    .threshold-item .th-label {
+      font-weight: 600;
+    }
+    .threshold-item .th-value {
+      color: var(--text-muted);
+    }
+
+    /* FILTRO PERÍODO */
+
+    .filter-bar {
+      margin-top: 10px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .filter-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .filter-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .filter-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .filter-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 14px;
+      font-size: 0.82rem;
+    }
+
+    .filter-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .filter-controls select {
+      padding: 4px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      background: #f9fafb;
+    }
+
+    @media (max-width: 900px){
+      .filter-bar { flex-direction: column; align-items:flex-start; }
+    }
+
+    /* GRÁFICOS */
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 900px){
+      .charts-row { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .charts-row .card-title {
+      text-align: center;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 260px !important;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* INFO CARDS */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 900px){
+      .info-grid { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .analysis-block {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+    .analysis-block strong { font-weight: 600; }
+
+    .card-purpose {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0 0 6px;
+      font-style: italic;
+    }
+
+    /* TABELA */
+
+    .table-card { 
+      margin-top: 14px;
+    }
+
+    #table-body-wrapper {
+      max-height: 260px;
+      overflow-y: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    thead {
+      background: var(--bg-soft);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    tbody tr:nth-child(even){
+      background: rgba(249,250,251,0.8);
+    }
+    tbody tr:hover {
+      background: rgba(37,99,235,0.10);
+    }
+
+    .table-note {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* RODAPÉ LINKS */
+
+    .links-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 18px;
+    }
+    .links-list p {
+      margin: 0;
+    }
+    .links-list p:first-child {
+      flex-basis: 100%;
+      margin-bottom: 4px;
+    }
+    .links-list a {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .links-list a:hover {
+      text-decoration: underline;
+    }
+
+    .synthesis {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .synthesis strong { color: var(--text-main); }
+
+    .synthesis-detail {
+      font-size: 0.9rem;
+    }
+    .synthesis-detail ul {
+      margin: 4px 0 4px 18px;
+      padding: 0;
+    }
+
+    .highlight-score {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: var(--text-main);
+    }
+    .highlight-risk {
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    /* Rodapé só para impressão */
+    .print-footer {
+      display: none;
+    }
+
+    /* Rodapé legal (somente web) */
+    .legal-footer {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--text-main);
+      padding: 26px 32px;
+    }
+
+    @media print {
+      body {
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-weight: normal !important;
+        background: #ffffff !important;
+      }
+
+      .card {
+        box-shadow: none !important;
+      }
+
+      header,
+      .grid-kpi,
+      .filter-bar,
+      .charts-row,
+      .info-grid,
+      .card,
+      .synthesis,
+      .synthesis-detail {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .btn-ghost,
+      select,
+      #annual-table {
+        display: none !important;
+      }
+
+      .legal-footer {
+        display: none !important;
+      }
+
+      body.print-simple .info-grid,
+      body.print-simple .table-card,
+      body.print-simple .table-note {
+        display: none !important;
+      }
+
+      .print-footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 10px;
+        color: #6b7280;
+        text-align: right;
+        padding-top: 3mm;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .print-footer::after {
+        content: "GCCI™ · www.gcci.global · página " counter(page) " / " counter(pages);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div>
+        <h1>GCCI™ · TAG-01 – Temperatura e Aquecimento</h1>
+        <div class="subtitle">
+          ΔT global médio anual (terra+oceano) em relação ao período pré-industrial
+          <strong>(1850–1900 ≈ 0 °C)</strong>. Os valores exibidos para o período
+          <strong>2000–2025</strong> e a projeção <strong>GCCI-FWD™ até 2040</strong> são
+          demonstrativos (mock), servindo apenas para apresentar o formato final da camada
+          <strong>TAG-01</strong>.<br>
+          <strong>Em produção, os dados reais serão integrados a partir de séries científicas auditáveis.</strong>
+        </div>
+        <div class="pill-header">
+          <span class="pill-dot"></span>
+          <span>Camada TAG-01 · Observacional + Projeção · v1.0</span>
+        </div>
+      </div>
+      <div class="meta">
+        <div><strong>Período observado:</strong> <span id="meta-period">2000–2025</span></div>
+        <div><strong>Janela de projeção:</strong> 2026–2040 (GCCI-FWD™ – mock)</div>
+        <div><strong>Última atualização:</strong> 27/11/2025</div>
+
+        <div class="meta-actions">
+          <button id="toggle-theme" class="btn-ghost">Modo escuro</button>
+          <button id="btn-export-simple" class="btn-ghost">PDF síntese</button>
+          <button id="btn-export-full" class="btn-ghost">PDF completo</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- KPIs -->
+    <section class="grid-kpi">
+      <!-- SCORE -->
+      <article class="card">
+        <div class="card-title">ΔT_GCCI – SCORE · Condição térmica global</div>
+        <div class="kpi-value" id="kpi-score-wrapper">
+          <span id="kpi-score">–</span><span style="font-size:0.95rem;">/ 100</span>
+        </div>
+        <div class="kpi-unit">
+          <strong>0 = estado extremo · 100 = próximo ao equilíbrio histórico.</strong>
+        </div>
+        <div id="kpi-score-delta" class="kpi-delta">
+          <span id="kpi-score-delta-val"></span><span>pontos vs. ano anterior</span>
+        </div>
+        <div class="kpi-prev" id="kpi-score-prev"></div>
+
+        <!-- RÉGUA SCORE -->
+        <div class="gauge">
+          <div class="gauge-track">
+            <div id="gauge-gap" class="gauge-gap"></div>
+            <div id="gauge-marker" class="gauge-marker"></div>
+          </div>
+          <div class="gauge-labels">
+            <span>0</span>
+            <span>100</span>
+          </div>
+        </div>
+
+        <div class="caption caption-score">
+          Score reduzido = aquecimento maior. Quanto mais próximo de 0, maior o desequilíbrio climático.
+        </div>
+      </article>
+
+      <!-- ΔT ANOMALIA -->
+      <article class="card">
+        <div class="card-title">ΔT_GCCI · Anomalia global (último ano observado)</div>
+        <div class="kpi-value" id="kpi-dt-wrapper">
+          <span id="kpi-dt">–</span><span style="font-size:0.95rem;">°C</span>
+        </div>
+        <div class="kpi-unit">
+          <strong>Diferença em relação à média do período pré-industrial (1850–1900 ≈ 0 °C).</strong>
+        </div>
+        <div id="kpi-dt-delta" class="kpi-delta">
+          <span id="kpi-dt-delta-val"></span><span>vs. ano anterior</span>
+        </div>
+        <div class="kpi-prev" id="kpi-dt-prev"></div>
+        <div class="caption">
+          ΔT_GCCI representa uma estimativa integrada a partir de séries globais de
+          temperatura da superfície, harmonizadas para um referencial comum.
+          <br>Valores acima de <strong>1,0 °C</strong> são considerados aquecimento expressivo.
+        </div>
+      </article>
+
+      <!-- RISCO CLIMÁTICO -->
+      <article class="card">
+        <div class="card-title">Enquadramento de risco climático</div>
+        <div class="badge-risk" id="badge-risk">Risco moderado (≥ 1,0 °C)</div>
+        <div class="kpi-unit" id="risk-text-main">
+          <strong>ΔT atual ~1,25 °C</strong> acima do pré-industrial, dentro da faixa de
+          <strong>risco moderado</strong> (entre 1,0 °C e 1,5 °C).
+        </div>
+        <div class="risk-scale">
+          <div class="risk-box" data-tip="Aquecimento mais próximo das condições históricas.">&lt; 1,0 °C<br>baixo</div>
+          <div class="risk-box active" data-tip="Faixa associada ao limite de 1,5 °C do Acordo de Paris.">1,0–1,5 °C<br>moderado</div>
+          <div class="risk-box" data-tip="Aumento importante de extremos climáticos e impactos regionais.">1,5–2,0 °C<br>alto</div>
+          <div class="risk-box" data-tip="Cenário de risco muito alto para sistemas naturais e humanos.">&gt; 2,0 °C<br>extremo</div>
+        </div>
+        <div class="caption">
+          Referências baseadas em literatura IPCC e Acordo de Paris:
+          <strong>1,5 °C</strong> (alto risco),
+          <strong>2,0 °C</strong> (risco muito alto),
+          <strong>3,0 °C</strong> (zona crítica).
+        </div>
+
+        <!-- BLOCO DE LIMIARES -->
+        <div class="threshold-block">
+          <div class="threshold-title">Distância até limiares de referência</div>
+          <div class="threshold-grid">
+            <div class="threshold-item">
+              <span class="th-label">1,5 °C</span>
+              <span id="th-15" class="th-value">–</span>
+            </div>
+            <div class="threshold-item">
+              <span class="th-label">2,0 °C</span>
+              <span id="th-20" class="th-value">–</span>
+            </div>
+            <div class="threshold-item">
+              <span class="th-label">3,0 °C</span>
+              <span id="th-30" class="th-value">–</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SÍNTESE GCCI -->
+    <div class="synthesis">
+      📍 <strong>Síntese GCCI para a camada TAG-01:</strong>
+      a Terra está cerca de <span id="synth-dt">1,25 °C</span> mais quente que o nível pré-industrial,
+      com score <span id="synth-score" class="highlight-score">51/100</span> e enquadramento em
+      <strong class="highlight-risk">risco moderado</strong>.
+    </div>
+
+    <!-- SÍNTESE DETALHADA DINÂMICA -->
+    <div class="synthesis synthesis-detail" id="synth-detail"></div>
+
+    <!-- FILTRO DE PERÍODO -->
+    <section class="card filter-bar">
+      <div class="filter-block">
+        <div class="filter-title">Período de análise</div>
+        <div class="filter-hint">
+          Escolha o intervalo de anos a ser exibido. Os gráficos, valores e a tabela abaixo
+          refletem apenas esse período. A projeção GCCI-FWD™ parte sempre do último ano
+          selecionado.
+        </div>
+      </div>
+      <div class="filter-controls">
+        <label>De
+          <select id="start-year"></select>
+        </label>
+        <label>Até
+          <select id="end-year"></select>
+        </label>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS -->
+    <section class="charts-row">
+      <article class="card">
+        <div class="card-title">ΔT_GCCI – Observado e projeção GCCI-FWD™</div>
+        <canvas id="chart-dt"></canvas>
+        <div class="caption">
+          Linha contínua: período observacional (dados fictícios realistas). Linha tracejada:
+          cenário de continuidade de tendência projetado por GCCI-FWD™.
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-title">ΔT_GCCI – SCORE (0–100) · Observado e projetado</div>
+        <canvas id="chart-score"></canvas>
+        <div class="caption">
+          Score TAG-01 observado e trajetória projetada sob continuidade de aquecimento.
+          Valores menores indicam maior desequilíbrio térmico global.
+        </div>
+      </article>
+    </section>
+
+    <!-- INFO CARDS -->
+    <section class="info-grid">
+      <article class="card">
+        <div class="card-title">Resumo executivo · TAG-01</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> oferecer uma leitura rápida, em linguagem não técnica,
+          do estado térmico global resumido pela camada TAG-01.
+        </p>
+        <div class="analysis-block">
+          <ul style="margin:0 0 8px 18px; padding:0;">
+            <li>ΔT global simulado para o último ano do período analisado está em torno de
+                <strong id="summary-dt">1,25 °C</strong> acima do período pré-industrial.</li>
+            <li>A maior parte da última década permanece acima de <strong>1,1 °C</strong>,
+                indicando um novo patamar térmico.</li>
+            <li>O score TAG-01 em torno de <strong id="summary-score">51/100</strong> enquadra
+                o momento como <strong>risco moderado</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-title">GCCI-FWD™ – Projeção proprietária</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> indicar, de forma transparente, que as projeções
+          são calculadas por um motor próprio baseado em dados e ciência climática.
+        </p>
+        <div class="analysis-block">
+          <strong>Base de dados:</strong> séries observacionais globais de temperatura
+          agregadas e harmonizadas pelo GCCI™.<br><br>
+          <strong>Abordagem:</strong> combinação de modelos estatísticos de série temporal
+          com pressupostos físicos inspirados na literatura climática. A forma exata e os
+          pesos internos permanecem proprietários.<br><br>
+          <strong>Governança:</strong> as curvas GCCI-FWD™ são calibradas para permanecer
+          consistentes com faixas de aquecimento publicadas pelos principais consórcios
+          científicos internacionais, antes de qualquer uso público.
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-title">Notícia e contexto</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> conectar o painel a notícias e relatórios atuais,
+          reforçando que a leitura de TAG-01 dialoga com o debate científico do momento.
+        </p>
+        <div class="analysis-block">
+          <p style="margin-top:0;">
+            Em produção, este card traria a notícia mais relevante do dia sobre aquecimento
+            global, selecionada a partir de instituições científicas reconhecidas
+            internacionalmente.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-title">TAG-01 dentro do GCCI</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> explicar o papel da camada térmica dentro do
+          índice GCCI completo, que possui várias dimensões adicionais.
+        </p>
+        <div class="analysis-block">
+          TAG-01 mede apenas o componente térmico médio global. Outras camadas do GCCI
+          tratam de extremos climáticos, risco regional, oceanos, biodiversidade, recursos
+          hídricos, entre outras dimensões.<br><br>
+          Na Condição Global Agregada (GCCI), TAG-01 tem peso relevante, mas não exclusivo,
+          refletindo que o aquecimento é central, porém não esgota a crise climática.
+        </div>
+      </article>
+
+      <!-- CARD DE LIMIARES NA TRAJETÓRIA -->
+      <article class="card">
+        <div class="card-title">Limiar de 1,5 °C e 2,0 °C na trajetória GCCI-FWD™</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> mostrar quando a trajetória simulada cruza os principais limiares de aquecimento global.
+        </p>
+        <div class="analysis-block">
+          <p style="margin-top:0;">
+            <strong>1,5 °C:</strong> <span id="th-15-year">–</span><br>
+            <strong>2,0 °C:</strong> <span id="th-20-year">–</span>
+          </p>
+          <p>
+            As datas são aproximadas e dependem do cenário GCCI-FWD™ utilizado. Em produção,
+            seriam recalculadas com base em cenários atualizados de emissões e respostas do
+            sistema climático.
+          </p>
+        </div>
+      </article>
+
+      <!-- NOVO CARD: LIMITES E CUIDADOS DE LEITURA -->
+      <article class="card">
+        <div class="card-title">Limites e cuidados de leitura · TAG-01</div>
+        <p class="card-purpose">
+          <strong>Para que serve:</strong> esclarecer como interpretar ΔT_GCCI™ corretamente
+          e quais limitações científicas envolvem esta camada.
+        </p>
+        <div class="analysis-block">
+          <ul style="margin:0 0 8px 18px; padding:0;">
+            <li>ΔT_GCCI™ representa a <strong>média global anual</strong> da anomalia térmica.
+                Não descreve, por si só, variações regionais ou sazonais.</li>
+            <li>Fenômenos de <strong>curto prazo</strong> (El Niño/La Niña, aerossóis,
+                erupções vulcânicas) podem deslocar ΔT em anos específicos sem alterar
+                a tendência de longo prazo.</li>
+            <li>As curvas GCCI-FWD™ são <strong>cenários condicionais</strong> e podem ser ajustadas
+                conforme novas trajetórias de emissões e avanços na ciência do clima.</li>
+            <li>Impactos sobre saúde, economia ou ecossistemas são tratados em outras
+                camadas do GCCI™ e não devem ser inferidos apenas a partir de TAG-01.</li>
+            <li>Em aplicações práticas, recomenda-se sempre combinar ΔT_GCCI™ com dados
+                regionais e setoriais antes de decisões de alto impacto.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- TABELA ANUAL (oculta no PDF) -->
+    <section class="card table-card" id="annual-table">
+      <div class="card-title">
+        Tabela anual – fontes & ΔT_GCCI – SCORE (<span id="table-period">2000–2025</span>)
+      </div>
+      <div id="table-body-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>ΔT NASA</th>
+              <th>ΔT NOAA</th>
+              <th>ΔT Berkeley</th>
+              <th>ΔT HadCRUT</th>
+              <th>ΔT_GCCI – SCORE</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="table-note">
+        Valores fictícios, porém próximos da ordem de grandeza observada em séries globais
+        de temperatura. Em produção, os números seriam atualizados automaticamente a partir
+        das bases originais.
+      </div>
+    </section>
+
+    <!-- FONTES DE REFERÊNCIA -->
+    <section class="card table-card">
+      <div class="card-title">Fontes de referência e leitura recomendada</div>
+      <div class="analysis-block links-list">
+        <p style="margin-top:0;">
+          Exemplos de instituições e bases amplamente utilizadas em estudos de temperatura global:
+        </p>
+        <p>
+          <strong>NASA GISTEMP</strong> ·
+          <a href="https://data.giss.nasa.gov/gistemp/" target="_blank">nasa.gov/gistemp</a>
+        </p>
+        <p>
+          <strong>NOAA</strong> ·
+          <a href="https://www.noaa.gov" target="_blank">noaa.gov</a>
+        </p>
+        <p>
+          <strong>Berkeley Earth</strong> ·
+          <a href="https://berkeleyearth.org" target="_blank">berkeleyearth.org</a>
+        </p>
+        <p>
+          <strong>Met Office / CRU (HadCRUT)</strong> ·
+          <a href="https://www.metoffice.gov.uk" target="_blank">metoffice.gov.uk</a>
+        </p>
+        <p>
+          <strong>IPCC</strong> ·
+          <a href="https://www.ipcc.ch" target="_blank">ipcc.ch</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- RODAPÉ LEGAL / COPYRIGHT (somente web) -->
+    <section class="card legal-footer">
+      <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; text-align:left;">
+
+        <div style="flex:1 1 260px; min-width:240px;">
+          <strong>© 2025 — GCCI™ · Global Climate Condition Index</strong><br>
+          Titularidade e autoria: <strong>Wagner Cócia de Oliveira — Campinas, Brasil</strong>.
+        </div>
+
+        <div style="flex:2 1 320px; max-width:520px;">
+          Esta camada <strong>(TAG-01)</strong> é disponibilizada como protótipo público. 
+          Os valores apresentados são demonstrativos (mock), podendo divergir de medições reais.<br>
+          A estrutura de cálculo, ponderação estatística e o motor preditivo
+          <strong>GCCI-FWD™</strong> permanecem sob sigilo institucional e não são de domínio público.
+        </div>
+
+        <div style="flex:2 1 320px; max-width:520px;">
+          O uso público é permitido apenas para fins informativos e não comerciais.<br>
+          É proibida redistribuição, republicação, modificação, engenharia reversa,
+          extração de métricas internas, derivação de produtos ou uso comercial
+          sem autorização formal e escrita do GCCI™.
+        </div>
+
+        <div style="flex:1 1 260px; min-width:240px; margin-top:6px;">
+          Termos completos disponíveis em:<br>
+          <a href="https://github.com/Global-Climate-Condition-Index/GCCI-Framework-Public/blob/public/LEGAL.md"
+             target="_blank" style="color:#2563eb; font-weight:600;">
+             LEGAL.md — GitHub (licença + restrições)
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Rodapé específico para impressão -->
+    <div class="print-footer"></div>
+  </div>
+
+  <script>
+    // DADOS FICTÍCIOS REALISTAS
+    const observedFull = [
+      { year: 2000, nasa: 0.67, noaa: 0.66, berk: 0.68, had: 0.64, score: 78 },
+      { year: 2001, nasa: 0.72, noaa: 0.70, berk: 0.71, had: 0.69, score: 76 },
+      { year: 2002, nasa: 0.79, noaa: 0.78, berk: 0.77, had: 0.76, score: 73 },
+      { year: 2003, nasa: 0.84, noaa: 0.83, berk: 0.82, had: 0.80, score: 71 },
+      { year: 2004, nasa: 0.81, noaa: 0.79, berk: 0.82, had: 0.78, score: 72 },
+      { year: 2005, nasa: 0.93, noaa: 0.92, berk: 0.94, had: 0.91, score: 67 },
+      { year: 2006, nasa: 0.89, noaa: 0.88, berk: 0.87, had: 0.86, score: 69 },
+      { year: 2007, nasa: 0.92, noaa: 0.91, berk: 0.93, had: 0.90, score: 67 },
+      { year: 2008, nasa: 0.75, noaa: 0.74, berk: 0.76, had: 0.72, score: 74 },
+      { year: 2009, nasa: 0.85, noaa: 0.84, berk: 0.83, had: 0.82, score: 71 },
+      { year: 2010, nasa: 0.99, noaa: 0.98, berk: 0.97, had: 0.96, score: 65 },
+      { year: 2011, nasa: 0.77, noaa: 0.76, berk: 0.75, had: 0.73, score: 73 },
+      { year: 2012, nasa: 0.86, noaa: 0.85, berk: 0.84, had: 0.83, score: 70 },
+      { year: 2013, nasa: 0.91, noaa: 0.90, berk: 0.89, had: 0.88, score: 68 },
+      { year: 2014, nasa: 0.96, noaa: 0.95, berk: 0.94, had: 0.93, score: 65 },
+      { year: 2015, nasa: 1.02, noaa: 1.01, berk: 1.00, had: 0.99, score: 62 },
+      { year: 2016, nasa: 1.12, noaa: 1.11, berk: 1.10, had: 1.08, score: 58 },
+      { year: 2017, nasa: 1.06, noaa: 1.04, berk: 1.05, had: 1.03, score: 60 },
+      { year: 2018, nasa: 1.04, noaa: 1.03, berk: 1.02, had: 1.01, score: 61 },
+      { year: 2019, nasa: 1.12, noaa: 1.11, berk: 1.10, had: 1.09, score: 58 },
+      { year: 2020, nasa: 1.19, noaa: 1.18, berk: 1.17, had: 1.16, score: 55 },
+      { year: 2021, nasa: 1.13, noaa: 1.12, berk: 1.11, had: 1.10, score: 58 },
+      { year: 2022, nasa: 1.15, noaa: 1.14, berk: 1.13, had: 1.12, score: 57 },
+      { year: 2023, nasa: 1.21, noaa: 1.20, berk: 1.19, had: 1.18, score: 54 },
+      { year: 2024, nasa: 1.23, noaa: 1.22, berk: 1.21, had: 1.20, score: 53 },
+      { year: 2025, nasa: 1.26, noaa: 1.25, berk: 1.24, had: 1.23, score: 51 }
+    ];
+
+    const projectedFull = [
+      { year: 2026, dt: 1.28, score: 50 },
+      { year: 2027, dt: 1.30, score: 49 },
+      { year: 2028, dt: 1.32, score: 48 },
+      { year: 2029, dt: 1.34, score: 47 },
+      { year: 2030, dt: 1.36, score: 46 },
+      { year: 2031, dt: 1.38, score: 45 },
+      { year: 2032, dt: 1.40, score: 44 },
+      { year: 2033, dt: 1.43, score: 43 },
+      { year: 2034, dt: 1.45, score: 42 },
+      { year: 2035, dt: 1.47, score: 41 },
+      { year: 2036, dt: 1.49, score: 40 },
+      { year: 2037, dt: 1.51, score: 39 },
+      { year: 2038, dt: 1.53, score: 38 },
+      { year: 2039, dt: 1.55, score: 37 },
+      { year: 2040, dt: 1.58, score: 35 }
+    ];
+
+    const fmt = (v, d=2) => v.toLocaleString("pt-BR", {
+      minimumFractionDigits: d,
+      maximumFractionDigits: d
+    });
+
+    const estDt = d => (d.nasa + d.noaa + d.berk + d.had) / 4;
+
+    let chartDt, chartScore;
+
+    const startSelect = document.getElementById("start-year");
+    const endSelect   = document.getElementById("end-year");
+
+    observedFull.forEach(d => {
+      const o1 = document.createElement("option");
+      o1.value = d.year;
+      o1.textContent = d.year;
+      startSelect.appendChild(o1);
+      const o2 = document.createElement("option");
+      o2.value = d.year;
+      o2.textContent = d.year;
+      endSelect.appendChild(o2);
+    });
+    startSelect.value = observedFull[0].year;
+    endSelect.value   = observedFull[observedFull.length-1].year;
+
+    startSelect.addEventListener("change", applyFilter);
+    endSelect.addEventListener("change", applyFilter);
+
+    const themeBtn        = document.getElementById("toggle-theme");
+    const exportSimpleBtn = document.getElementById("btn-export-simple");
+    const exportFullBtn   = document.getElementById("btn-export-full");
+
+    themeBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      document.body.classList.toggle("dark", isDark);
+      themeBtn.textContent = isDark ? "Modo claro" : "Modo escuro";
+    });
+
+    function printWithMode(mode) {
+      document.body.classList.remove("print-simple");
+      document.body.classList.remove("print-full");
+
+      if (mode === "simple") {
+        document.body.classList.add("print-simple");
+      } else if (mode === "full") {
+        document.body.classList.add("print-full");
+      }
+
+      window.print();
+
+      setTimeout(() => {
+        document.body.classList.remove("print-simple");
+        document.body.classList.remove("print-full");
+      }, 1000);
+    }
+
+    exportSimpleBtn.addEventListener("click", () => printWithMode("simple"));
+    exportFullBtn.addEventListener("click",   () => printWithMode("full"));
+
+    function bump(el) {
+      el.classList.remove("kpi-pop");
+      void el.offsetWidth;
+      el.classList.add("kpi-pop");
+    }
+
+    function updateSynthesisDetail(lastDt) {
+      const el = document.getElementById("synth-detail");
+
+      let faixa, riscoTitulo, riscoItems, benefTitulo, benefItems;
+
+      if (lastDt < 1.0) {
+        faixa = "abaixo de 1,0 °C";
+        riscoTitulo = "Riscos mais prováveis nesta faixa (ΔT abaixo de 1,0 °C):";
+        riscoItems = [
+          "Mudanças climáticas já detectáveis, mas com intensidade média menor de extremos em comparação a cenários mais quentes.",
+          "Impactos concentrados em regiões vulneráveis, com tendência de aumento gradual ao longo do tempo.",
+          "Maior dependência da trajetória futura: manter ou reduzir emissões é decisivo para evitar deslocamento para faixas de maior risco."
+        ];
+        benefTitulo = "Benefícios de manter o aquecimento próximo ou abaixo desta faixa:";
+        benefItems = [
+          "Redução significativa da probabilidade de eventos climáticos extremos mais severos.",
+          "Maior espaço de adaptação para cidades, agricultura e ecossistemas.",
+          "Mais margem de segurança climática para as próximas gerações."
+        ];
+      } else if (lastDt < 1.5) {
+        faixa = "entre ~1,0 °C e 1,5 °C";
+        riscoTitulo = "Riscos mais prováveis na faixa atual (~1,0–1,5 °C):";
+        riscoItems = [
+          "Ondas de calor e secas mais intensas, com efeitos sobre saúde pública e produção de alimentos.",
+          "Chuvas extremas e inundações mais frequentes em algumas regiões, pressionando infraestrutura urbana.",
+          "Elevação gradual do nível do mar, ampliando riscos para áreas costeiras e pequenas ilhas."
+        ];
+        benefTitulo = "Benefícios de estabilizar ou reduzir o aquecimento abaixo desta faixa:";
+        benefItems = [
+          "Redução de perdas econômicas associadas a desastres climáticos recorrentes.",
+          "Menor pressão sobre sistemas de saúde e serviços essenciais.",
+          "Melhor proteção de ecossistemas-chave, mantendo serviços naturais como água, solo e biodiversidade."
+        ];
+      } else if (lastDt < 2.0) {
+        faixa = "entre ~1,5 °C e 2,0 °C";
+        riscoTitulo = "Riscos esperados se o sistema permanecer em ~1,5–2,0 °C:";
+        riscoItems = [
+          "Aumento forte na frequência e intensidade de extremos de calor, secas, incêndios florestais e chuvas intensas.",
+          "Maior risco de perdas irreversíveis em alguns ecossistemas (corais, geleiras de montanha, zonas úmidas costeiras).",
+          "Impactos sistêmicos em segurança hídrica, alimentar e energética, com maior potencial de crises humanitárias."
+        ];
+        benefTitulo = "Benefícios de evitar a consolidação desta faixa ou trazer ΔT de volta para baixo de 1,5 °C:";
+        benefItems = [
+          "Desaceleração do ritmo de danos econômicos e sociais associados a desastres.",
+          "Maior chance de preservar ecossistemas sensíveis e serviços ambientais essenciais.",
+          "Redução de riscos de instabilidades múltiplas ao mesmo tempo (clima, economia, saúde)."
+        ];
+      } else {
+        faixa = "acima de 2,0 °C";
+        riscoTitulo = "Riscos em cenários acima de 2,0 °C:";
+        riscoItems = [
+          "Probabilidade elevada de impactos muito intensos e generalizados, com múltiplos extremos ocorrendo em sequência ou combinados.",
+          "Risco alto de perdas irreversíveis em grandes sistemas naturais (calotas de gelo, florestas sensíveis, recifes de coral).",
+          "Pressão extrema sobre infraestrutura, economia e governança, especialmente em países e regiões mais vulneráveis."
+        ];
+        benefTitulo = "Benefícios de impedir que ΔT atinja ou permaneça nessa faixa:";
+        benefItems = [
+          "Evitar danos socioeconômicos e ambientais potencialmente irreversíveis e de difícil gestão.",
+          "Preservar o maior número possível de opções de adaptação para sociedades e ecossistemas.",
+          "Mantém aberta a possibilidade de um futuro climático mais estável e menos arriscado."
+        ];
+      }
+
+      el.innerHTML = `
+        <strong>Leitura qualitativa da faixa de aquecimento atual (${faixa}):</strong>
+        <ul>
+          ${riscoItems.map(i => `<li>${i}</li>`).join("")}
+        </ul>
+        <strong>${benefTitulo}</strong>
+        <ul>
+          ${benefItems.map(i => `<li>${i}</li>`).join("")}
+        </ul>
+      `;
+    }
+
+    function updateRiskBlock(lastDt) {
+      const badge = document.getElementById("badge-risk");
+      const riskText = document.getElementById("risk-text-main");
+      const boxes = document.querySelectorAll(".risk-box");
+
+      let label, range;
+      if (lastDt < 1.0) {
+        label = "baixo";
+        range = "< 1,0 °C";
+        badge.textContent = "Risco baixo (< 1,0 °C)";
+      } else if (lastDt < 1.5) {
+        label = "moderado";
+        range = "1,0–1,5 °C";
+        badge.textContent = "Risco moderado (1,0–1,5 °C)";
+      } else if (lastDt < 2.0) {
+        label = "alto";
+        range = "1,5–2,0 °C";
+        badge.textContent = "Risco alto (1,5–2,0 °C)";
+      } else {
+        label = "extremo";
+        range = "> 2,0 °C";
+        badge.textContent = "Risco extremo (> 2,0 °C)";
+      }
+
+      boxes.forEach(b => b.classList.remove("active"));
+      if (lastDt < 1.0 && boxes[0]) boxes[0].classList.add("active");
+      else if (lastDt < 1.5 && boxes[1]) boxes[1].classList.add("active");
+      else if (lastDt < 2.0 && boxes[2]) boxes[2].classList.add("active");
+      else if (boxes[3]) boxes[3].classList.add("active");
+
+      riskText.innerHTML =
+        `<strong>ΔT atual ~${fmt(lastDt,2)} °C</strong> acima do pré-industrial, dentro da faixa de ` +
+        `<strong>risco ${label}</strong> (${range}).`;
+    }
+
+    function updateThresholdDistances(lastDt) {
+      const th15El = document.getElementById("th-15");
+      const th20El = document.getElementById("th-20");
+      const th30El = document.getElementById("th-30");
+
+      const buildText = (threshold) => {
+        const delta = lastDt - threshold;
+        const abs = Math.abs(delta);
+        if (abs < 0.005) return "≈ no limiar";
+        const dir = delta >= 0 ? "acima" : "abaixo";
+        return `${fmt(abs,2)} °C ${dir}`;
+      };
+
+      if (th15El) th15El.textContent = buildText(1.5);
+      if (th20El) th20El.textContent = buildText(2.0);
+      if (th30El) th30El.textContent = buildText(3.0);
+    }
+
+    function updateKpisAndSummary(observed, startYear, endYear) {
+      const lastObs = observed[observed.length - 1];
+      const prevObs = observed[observed.length - 2] || observed[observed.length - 1];
+
+      const lastDt = estDt(lastObs);
+      const prevDt = estDt(prevObs);
+      const lastScore = lastObs.score;
+      const prevScore = prevObs.score;
+
+      document.getElementById("kpi-dt").textContent   = fmt(lastDt, 2);
+      document.getElementById("kpi-score").textContent = fmt(lastScore, 0);
+
+      bump(document.getElementById("kpi-dt-wrapper"));
+      bump(document.getElementById("kpi-score-wrapper"));
+
+      const deltaT = lastDt - prevDt;
+      const dtDeltaEl = document.getElementById("kpi-dt-delta");
+      dtDeltaEl.classList.remove("positive","negative");
+      dtDeltaEl.classList.add(deltaT >= 0 ? "positive" : "negative");
+      document.getElementById("kpi-dt-delta-val").textContent =
+        (deltaT >= 0 ? "+" : "") + fmt(deltaT, 2) + " °C";
+
+      const deltaScore = lastScore - prevScore;
+      const scoreDeltaEl = document.getElementById("kpi-score-delta");
+      scoreDeltaEl.classList.remove("positive","negative");
+      scoreDeltaEl.classList.add(deltaScore >= 0 ? "negative" : "positive");
+      document.getElementById("kpi-score-delta-val").textContent =
+        (deltaScore >= 0 ? "+" : "") + fmt(deltaScore, 1) + " pts";
+
+      document.getElementById("kpi-dt-prev").textContent =
+        `Ano anterior: ${fmt(prevDt,2)} °C`;
+      document.getElementById("kpi-score-prev").textContent =
+        `Ano anterior: ${fmt(prevScore,0)} / 100`;
+
+      // posição do marcador/ruptura na régua
+      const markerPos = Math.max(0, Math.min(100, lastScore));
+      const markerEl = document.getElementById("gauge-marker");
+      const gapEl = document.getElementById("gauge-gap");
+      if (markerEl) markerEl.style.left = markerPos + "%";
+      if (gapEl) gapEl.style.left = markerPos + "%";
+
+      document.getElementById("summary-dt").textContent    = fmt(lastDt, 2) + " °C";
+      document.getElementById("summary-score").textContent = fmt(lastScore, 0) + "/100";
+
+      document.getElementById("synth-dt").textContent    = fmt(lastDt,2) + " °C";
+      document.getElementById("synth-score").textContent = fmt(lastScore,0) + "/100";
+
+      updateRiskBlock(lastDt);
+      updateSynthesisDetail(lastDt);
+      updateThresholdDistances(lastDt);
+
+      document.getElementById("meta-period").textContent  = `${startYear}–${endYear}`;
+      document.getElementById("table-period").textContent = `${startYear}–${endYear}`;
+    }
+
+    function buildOrUpdateCharts(observed, projected) {
+      const yearsObs  = observed.map(d => d.year);
+      const yearsProj = projected.map(d => d.year);
+      const allYears  = yearsObs.concat(yearsProj);
+
+      const obsDt = allYears.map(y => {
+        const f = observed.find(d => d.year === y);
+        return f ? estDt(f) : null;
+      });
+      const projDt = allYears.map(y => {
+        const f = projected.find(d => d.year === y);
+        return f ? f.dt : null;
+      });
+
+      const obsScore = allYears.map(y => {
+        const f = observed.find(d => d.year === y);
+        return f ? f.score : null;
+      });
+      const projScore = allYears.map(y => {
+        const f = projected.find(d => d.year === y);
+        return f ? f.score : null;
+      });
+
+      const legendOpts = {
+        position: "top",
+        align: "center",
+        labels: { font: { size: 11, weight: 'normal' } }
+      };
+
+      const dtOptions = {
+        responsive: true,
+        animation: { duration: 900, easing: 'easeOutQuart' },
+        plugins: {
+          legend: legendOpts,
+          tooltip: {
+            callbacks: {
+              label: ctx => `${ctx.dataset.label}: ${fmt(ctx.parsed.y)} °C`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+          y: { title: { display: true, text: "ΔT (°C)" }, grid: { color: "#e5e7eb" } }
+        }
+      };
+
+      const scoreOptions = {
+        responsive: true,
+        animation: { duration: 900, easing: 'easeOutQuart' },
+        plugins: {
+          legend: legendOpts,
+          tooltip: {
+            callbacks: {
+              label: ctx => `${ctx.dataset.label}: ${fmt(ctx.parsed.y,1)} / 100`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+          y: {
+            min: 0,
+            max: 100,
+            grid: { color: "#e5e7eb" },
+            title: { display: true, text: "Score (0–100)" }
+          }
+        }
+      };
+
+      if (!chartDt) {
+        chartDt = new Chart(document.getElementById("chart-dt"), {
+          type: "line",
+          data: {
+            labels: allYears,
+            datasets: [
+              {
+                label: "ΔT_GCCI (estimado) – Observado",
+                data: obsDt,
+                borderWidth: 2.2,
+                borderColor: "#2563eb",
+                tension: 0.25,
+                spanGaps: true,
+                fill: false,
+                pointRadius: 1.5
+              },
+              {
+                label: "ΔT_GCCI – Projeção GCCI-FWD™",
+                data: projDt,
+                borderWidth: 2,
+                borderColor: "#2563eb",
+                borderDash: [6,4],
+                tension: 0.25,
+                spanGaps: true,
+                fill: false,
+                pointRadius: 0
+              }
+            ]
+          },
+          options: dtOptions
+        });
+
+        chartScore = new Chart(document.getElementById("chart-score"), {
+          type: "line",
+          data: {
+            labels: allYears,
+            datasets: [
+              {
+                label: "Score observado",
+                data: obsScore,
+                borderWidth: 2.2,
+                borderColor: "#16a34a",
+                tension: 0.25,
+                spanGaps: true,
+                fill: false,
+                pointRadius: 1.5
+              },
+              {
+                label: "Score – Projeção GCCI-FWD™",
+                data: projScore,
+                borderWidth: 2,
+                borderColor: "#16a34a",
+                borderDash: [6,4],
+                tension: 0.25,
+                spanGaps: true,
+                fill: false,
+                pointRadius: 0
+              }
+            ]
+          },
+          options: scoreOptions
+        });
+      } else {
+        chartDt.data.labels = allYears;
+        chartDt.data.datasets[0].data = obsDt;
+        chartDt.data.datasets[1].data = projDt;
+        chartDt.update();
+
+        chartScore.data.labels = allYears;
+        chartScore.data.datasets[0].data = obsScore;
+        chartScore.data.datasets[1].data = projScore;
+        chartScore.update();
+      }
+    }
+
+    function buildTable(observed) {
+      const tbody = document.getElementById("table-body");
+      tbody.innerHTML = "";
+      observed.forEach(d => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${d.year}</td>
+          <td>${fmt(d.nasa)}</td>
+          <td>${fmt(d.noaa)}</td>
+          <td>${fmt(d.berk)}</td>
+          <td>${fmt(d.had)}</td>
+          <td>${fmt(d.score,1)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function applyFilter() {
+      let startYear = parseInt(startSelect.value, 10);
+      let endYear   = parseInt(endSelect.value, 10);
+      if (startYear > endYear) {
+        if (this === startSelect) {
+          endYear = startYear;
+          endSelect.value = endYear;
+        } else {
+          startYear = endYear;
+          startSelect.value = startYear;
+        }
+      }
+      const observed = observedFull.filter(d => d.year >= startYear && d.year <= endYear);
+      const projected = projectedFull;
+
+      updateKpisAndSummary(observed, startYear, endYear);
+      buildOrUpdateCharts(observed, projected);
+      buildTable(observed);
+    }
+
+    function computeThresholdYears() {
+      const combined = [];
+      observedFull.forEach(d => combined.push({ year: d.year, dt: estDt(d), type: "obs" }));
+      projectedFull.forEach(d => combined.push({ year: d.year, dt: d.dt, type: "proj" }));
+
+      const getYearForThreshold = (thr) => {
+        const hitObs = combined.find(c => c.dt >= thr && c.type === "obs");
+        if (hitObs) return `${hitObs.year} (já observado)`;
+        const hitProj = combined.find(c => c.dt >= thr && c.type === "proj");
+        if (hitProj) return `${hitProj.year} (projeção GCCI-FWD™)`;
+        return "não ultrapassa até 2040 neste cenário";
+      };
+
+      const el15 = document.getElementById("th-15-year");
+      const el20 = document.getElementById("th-20-year");
+      if (el15) el15.textContent = getYearForThreshold(1.5);
+      if (el20) el20.textContent = getYearForThreshold(2.0);
+    }
+
+    computeThresholdYears();
+    applyFilter();
+  </script>
+</body>
+</html>

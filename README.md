@@ -163,6 +163,8 @@ Este repositório funciona como **registro público de anterioridade**, assegura
 
 Nenhum direito é transferido ou licenciado através deste repositório.
 
+---
+
 ### DOCUMENTAÇÃO JURÍDICA E DE INTEGRIDADE — GCCI™
 
 Este repositório mantém a estrutura formal de proteção intelectual, política de uso e auditoria pública do GCCI™ — Global Climate Condition Index.

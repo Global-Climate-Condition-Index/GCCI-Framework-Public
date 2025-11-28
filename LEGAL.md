@@ -1,6 +1,6 @@
 ## Termos Jurídicos Institucionais do GCCI™
 
-📑 Versão institucional: v1.0  
+Versão institucional: v1.0  
 © 2025 — GCCI™ — Global Climate Condition Index  
 © 2025 — Wagner Cócia de Oliveira — Autor, Criador e Desenvolvedor do GCCI™
 

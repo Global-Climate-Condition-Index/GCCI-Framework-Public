@@ -128,6 +128,59 @@
       max-width: 620px;
     }
 
+    /* CTA HEADER → ACESSAR PAINEL TAG-01 */
+    .hero-cta {
+      flex: 0 0 230px;
+      min-width: 220px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-cta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-cta-pill .emoji {
+      font-size: 16px;
+    }
+
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #1d4ed8;
+      background: #1d4ed8;
+      color: #eff6ff;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .hero-cta-btn:hover {
+      background: #1e40af;
+      border-color: #1e40af;
+      text-decoration: none;
+    }
+
+    .hero-cta-btn span.arrow {
+      font-size: 14px;
+    }
+
     main {
       margin-top: 14px;   /* espaço abaixo do header fixo */
       display: flex;
@@ -267,6 +320,20 @@
       padding: 6px 8px;
       font-size: 13.5px;
       color: var(--text-soft);
+      text-decoration: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.1s ease;
+    }
+
+    /* Quando for link (caso de Temperatura e aquecimento) */
+    .dimensions-grid a.dimension-item {
+      cursor: pointer;
+    }
+
+    .dimensions-grid a.dimension-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
+      transform: translateY(-1px);
+      text-decoration: none;
     }
 
     .dimension-item .emoji {
@@ -292,6 +359,10 @@
       .dimensions-grid {
         grid-template-columns: repeat(1, minmax(0, 1fr));
       }
+      .hero-cta {
+        text-align: left;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -316,6 +387,22 @@
           operacionais, com foco em integridade, autoria e estrutura
           institucional.
         </p>
+      </div>
+
+      <!-- CTA para o painel TAG-01 -->
+      <div class="hero-cta">
+        <div class="hero-cta-pill">
+          <span class="emoji">🌡️</span>
+          <span>Temperatura e aquecimento</span>
+        </div>
+        <a
+          href="tag-01.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hero-cta-btn"
+        >
+          Acessar painel TAG-01 <span class="arrow">↗</span>
+        </a>
       </div>
     </header>
 
@@ -450,10 +537,19 @@
             <span class="emoji">🌍</span>
             <span>Condição global agregada</span>
           </div>
-          <div class="dimension-item">
+
+          <!-- TEMPERATURA E AQUECIMENTO → LINK PARA O PAINEL TAG-01 -->
+          <a
+            class="dimension-item"
+            href="tag-01.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir painel interativo TAG-01 — Temperatura e aquecimento"
+          >
             <span class="emoji">🌡️</span>
             <span>Temperatura e aquecimento</span>
-          </div>
+          </a>
+
           <div class="dimension-item">
             <span class="emoji">🌊</span>
             <span>Oceanos e nível do mar</span>

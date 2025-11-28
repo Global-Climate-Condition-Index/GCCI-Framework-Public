@@ -52,8 +52,7 @@ ou tentativa de violação metodológica.
 
 ---
 
-──────────────────────────────────────────────────────────────
-📄 Registro Adicional de Integridade — Documentos Jurídicos
+Registro Adicional de Integridade — Documentos Jurídicos
 
 v1.0 – LEGAL.md (26/11/2025)
 SHA-256: 2f53c84a813941ebfadba3c72adbad833cbbbe4e0674963c6c42b14cce472b8
@@ -67,4 +66,4 @@ SHA-512: 65d5e211e2d16ddb48ffdd5ae355e14799890a377fb357d8cb2cb08437d27320d13b43b
 📢 Natureza do documento:
 Base jurídica institucional — proteção legal, uso e enquadramento de direitos.
 Não constitui parte metodológica do índice. Classificado como documento jurídico complementar oficial.
-──────────────────────────────────────────────────────────────
+

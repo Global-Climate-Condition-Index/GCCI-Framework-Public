@@ -30,5 +30,10 @@ do GCCI, conforme descrito nos documentos oficiais.
 
 Este repositório tem finalidade exclusivamente institucional, documental e declaratória.
 
+NOTICE — Este repositório publica documentação prototípica do GCCI™.
+Todo o método matemático, pesos internos, arquitetura e GCCI-FWD™
+são propriedade intelectual reservada e não podem ser reproduzidos
+ou derivados sem autorização formal.
+
 Todos os direitos reservados.  
 © 2025 — GCCI — Global Climate Condition Index

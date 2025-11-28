@@ -1,4 +1,4 @@
-# LEGAL.md — Termos Jurídicos Institucionais do GCCI™
+##Termos Jurídicos Institucionais do GCCI™
 
 📑 Versão institucional: v1.0  
 © 2025 — GCCI™ — Global Climate Condition Index  
